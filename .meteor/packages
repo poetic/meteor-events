@@ -7,3 +7,7 @@
 meteor-platform
 autopublish
 insecure
+materialize:materialize
+underscore
+iron:router
+swiper:swiper
