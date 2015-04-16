@@ -1,13 +1,13 @@
-<template name='eventsIndex'>
+<template name='EventsIndex'>
   <div class='swiper-container events-index-links'>
     <div class='swiper-wrapper'>
-      <div class='swiper-slide'>
+      <div class='swiper-slide link-section'>
         RSVPs
       </div>
-      <div class='swiper-slide'>
+      <div class='swiper-slide link-section'>
         Upcoming
       </div>
-      <div class='swiper-slide'>
+      <div class='swiper-slide link-section'>
         Past Events
       </div>
     </div>
@@ -15,10 +15,15 @@
 
   <div class='swiper-container events-index-slides'>
     <div class='swiper-wrapper'>
-      {{#each events}}
-        <div class='swiper-slide'>
-        </div>
-      {{/each}}
+      <div class='swiper-slide'>
+        {{> EventsRsvp}}
+      </div>
+      <div class='swiper-slide'>
+        {{> EventsUpcoming}}
+      </div>
+      <div class='swiper-slide'>
+        {{> EventsPastEvents}}
+      </div>
     </div>
   </div>
 </template>

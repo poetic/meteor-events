@@ -10,6 +10,6 @@ insecure
 materialize:materialize
 underscore
 iron:router
-swiper:swiper
 digilord:faker
 aldeed:simple-schema
+fourseven:scss

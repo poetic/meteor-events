@@ -1,0 +1,2 @@
+EventsIndexController = ApplicationController.extend({
+});
