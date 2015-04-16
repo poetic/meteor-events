@@ -1,0 +1,24 @@
+<template name='eventsIndex'>
+  <div class='swiper-container events-index-links'>
+    <div class='swiper-wrapper'>
+      <div class='swiper-slide'>
+        RSVPs
+      </div>
+      <div class='swiper-slide'>
+        Upcoming
+      </div>
+      <div class='swiper-slide'>
+        Past Events
+      </div>
+    </div>
+  </div>
+
+  <div class='swiper-container events-index-slides'>
+    <div class='swiper-wrapper'>
+      {{#each events}}
+        <div class='swiper-slide'>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
