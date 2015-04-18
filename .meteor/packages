@@ -7,9 +7,13 @@
 meteor-platform
 autopublish
 insecure
-materialize:materialize
-underscore
 iron:router
-digilord:faker
-aldeed:simple-schema
+materialize:materialize
 fourseven:scss
+digilord:faker
+dburles:collection-helpers
+underscore
+aldeed:simple-schema
+aldeed:collection2
+msavin:mongol
+momentjs:moment
