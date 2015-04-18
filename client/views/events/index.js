@@ -1,16 +1,24 @@
-Template.EventsIndex.rendered = function(){
-  var linkSwiper = this.$('.events-index-links').swiper({
+Template.EventsIndex.created = function(){
+  this.data.linksOptions = {
     centeredSlides: true,
-    slidesPerView: 3,
+    slidesPerView: 'auto',
     slideToClickedSlide: true,
-    touchRatio: 0.3,
+    touchRatio: 0.35,
     initialSlide: 1,
-  });
+  };
 
-  var slideSwiper = this.$('.events-index-slides').swiper({
+  this.data.slidesOptions = {
     initialSlide: 1,
-  });
+  };
 
-  slideSwiper.params.control = linkSwiper;
-  linkSwiper.params.control = slideSwiper;
+  this.data.param = 'slides';
+};
+
+
+Template.EventsIndex.rendered = function(){
+  var swiper1 = this.$('.swiper-container')[0].swiper;
+  var swiper2 = this.$('.swiper-container')[1].swiper;
+
+  swiper1.params.control = swiper2;
+  swiper2.params.control = swiper1;
 };
