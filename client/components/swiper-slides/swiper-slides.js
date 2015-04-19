@@ -1,34 +1,37 @@
 Template.swiperSlides.created = function(){
-  //console.log(history.state)
-  //var param = this.data.param;
+  var param = this.data.param;
+  var routeParams = Router.current().params.query;
 
-  //if (routeHasQueryParam(param)) {
-    //this.data.initialSlideOverride = Router.current().params.query[param];
-  //}
+  if (_.has(routeParams, param)) {
+    this.data.options.initialSlide = routeParams[param];
+  }
 };
 
 Template.swiperSlides.rendered = function(){
   var options = this.data.options;
   var defaults = { onTransitionEnd: onTransitionEnd.bind(this) };
-
-  //if (_.has(this.data, 'initialSlideOverride')) {
-    //defaults.initialSlide = this.data.initialSlideOverride;
-  //}
-
   var swiperOptions = _.extend(options, defaults);
 
   this.$('.swiper-container').swiper(swiperOptions);
+
+  addStateListener.call(this);
 };
 
 function onTransitionEnd (event){
   var param = this.data.param;
-  var newState = {}
+  var newState = {};
 
   if (history.state[param] !== event.activeIndex) {
     newState[param] = event.activeIndex;
     history.pushState(newState, '',  '?' + param + '=' + event.activeIndex);
-  }
+  };
+};
 
-  //var query = { query: param + '=' + e.activeIndex };
-  //Router.go(currentRoute, {}, query);
+function addStateListener (){
+  var swiper = this.$('.swiper-container')[0].swiper;
+  var param = this.data.param;
+
+  window.onpopstate = function(event){
+    swiper.slideTo(event.state[param]);
+  };
 };
