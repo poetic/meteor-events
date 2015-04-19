@@ -1,16 +1,31 @@
 Events = new Mongo.Collection('events');
 
 Events.attachSchema(new SimpleSchema({
+  user: {
+    type: String
+  },
+  coverPhoto: {
+    type: String
+  },
   title: {
-    type: String,
-    label: 'Title',
+    type: String
   },
-  date: {
-    type: Date,
-    label: 'Date',
+  description: {
+    type: String
   },
-  image: {
-    type: String,
-    label: 'Image'
+  hostName: {
+    type: String
+  },
+  isPlusOne: {
+    type: Boolean
+  },
+  hosts: {
+    type: [HostSchema]
+  },
+  activities: {
+    type: [ActivitySchema]
+  },
+  comments: {
+    type: [CommentSchema]
   },
 }));
