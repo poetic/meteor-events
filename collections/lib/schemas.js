@@ -66,7 +66,8 @@ ActivitySchema = new SimpleSchema({
 
 CommentSchema = new SimpleSchema({
   user: {
-    type: String
+    type: String,
+    optional: true,
   },
   body: {
     type: String

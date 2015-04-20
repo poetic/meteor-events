@@ -1,7 +1,33 @@
 Meteor.startup(function(){
+  var user1, user2, user3;
+
+  if (!Users.find().count()) {
+    user1 = Users.insert({
+      fullName: faker.name.findName(),
+      email: faker.internet.email(),
+      secondaryEmail: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
+    });
+
+    user2 = Users.insert({
+      fullName: faker.name.findName(),
+      email: faker.internet.email(),
+      secondaryEmail: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
+    });
+
+    user3 = Users.insert({
+      fullName: faker.name.findName(),
+      email: faker.internet.email(),
+      secondaryEmail: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
+    });
+  }
+
   if (!Events.find().count()) {
     _(10).times(function(){
       Events.insert({
+        user: user1,
         coverPhoto: faker.image.imageUrl(),
         title: faker.name.findName(),
         description: faker.lorem.sentences(),
@@ -22,7 +48,7 @@ Meteor.startup(function(){
         activities: [{
           title: faker.name.findName(),
           startTime: faker.date.past(),
-          endTime: new Date(),
+          endTime: faker.date.future(),
           timeZone: 'central',
 
           address: {
@@ -40,7 +66,7 @@ Meteor.startup(function(){
         }, {
           title: faker.name.findName(),
           startTime: faker.date.past(),
-          endTime: new Date(),
+          endTime: faker.date.future(),
           timeZone: 'central',
 
           address: {
@@ -58,7 +84,7 @@ Meteor.startup(function(){
         }, {
           title: faker.name.findName(),
           startTime: faker.date.past(),
-          endTime: new Date(),
+          endTime: faker.date.future(),
           timeZone: 'central',
 
           address: {
@@ -76,15 +102,19 @@ Meteor.startup(function(){
         }],
 
         comments: [{
+          user: user1,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
         }, {
+          user: user2,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
         }, {
+          user: user1,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
         }, {
+          user: user3,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
         }],
