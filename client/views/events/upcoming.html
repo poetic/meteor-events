@@ -1,10 +1,10 @@
 <template name='EventsUpcoming'>
   <div class='swiper-slide'>
-    <ul class='event-previews'>
+    <ul class='event-listings'>
       {{#each upcomingEvents}}
-        <li>
+        <li style='background-image: url("/images/320.jpg");'>
           <div class='event-preview-details'>
-            <p>{{title}}</p>
+            <h5>{{title}}</h5>
             <p>Sunday Oct 15 2:00pm</p>
           </div>
         </li>
