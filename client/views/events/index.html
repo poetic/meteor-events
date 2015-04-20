@@ -1,8 +1,6 @@
 <template name='EventsIndex'>
   {{#swiperSlides
-    options=linksOptions
-    param=param
-    classNames='link-swiper'
+    options=linksOptions param=param classNames='link-swiper'
   }}
     <div class='swiper-slide'>
       RSVPs
@@ -16,12 +14,10 @@
   {{/swiperSlides}}
 
   {{#swiperSlides
-    options=slidesOptions
-    param=param
-    classNames='slide-swiper'
+    options=slidesOptions param=param classNames='slide-swiper'
   }}
     {{> EventsRsvp}}
-    {{> EventsUpcoming}}
-    {{> EventsPastEvents}}
+    {{> EventsListing eventsListing=upcomingEvents}}
+    {{> EventsListing eventsListing=pastEvents}}
   {{/swiperSlides}}
 </template>
