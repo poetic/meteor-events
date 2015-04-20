@@ -1,18 +1,17 @@
 EventsIndexController = ApplicationController.extend({
-  data: {
-    upcomingEvents: function(){
-      var currentTime = new Date()
+  data: function(){
+    var _id = this.params._id;
 
-      return Events.find({
-        date: { $gte: currentTime }
-      });
-    },
-    pastEvents: function(){
-      var currentTime = new Date()
-
-      return  Events.find({
-        date: { $lt: currentTime }
-      });
-    }
-  },
+    return {
+      upcomingEvents: function(){
+        return Events.find({ user: _id });
+      },
+      pastEvents: function(){
+        return Events.find({ user: _id });
+      },
+      rsvps: function(){
+        return [];
+      }
+    };
+  }
 });
