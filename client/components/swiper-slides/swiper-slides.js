@@ -19,12 +19,16 @@ Template.swiperSlides.rendered = function(){
 
 function onTransitionEnd (event){
   var param = this.data.param;
-  var newState = {};
+  var queryString = '?' + param + '=' + event.activeIndex;
 
-  if (history.state[param] !== event.activeIndex) {
-    newState[param] = event.activeIndex;
-    history.pushState(newState, '',  '?' + param + '=' + event.activeIndex);
-  };
+  var newState = {};
+  newState[param] = event.activeIndex;
+
+  if (!history.state) {
+    history.replaceState(newState, '', queryString);
+  } else if (history.state[param] !== event.activeIndex) {
+    history.pushState(newState, '', queryString);
+  }
 };
 
 function addStateListener (){
