@@ -1,0 +1,17 @@
+.link-swiper {
+  background-color: black;
+  height: 70px;
+  color: gray;
+  text-align: center;
+  border-bottom: 1px solid gray;
+
+  .swiper-slide {
+    width: 40%;
+    height: 40px;
+    padding-top: 30px;
+  }
+
+  .swiper-slide-active {
+    color: white;
+  }
+}

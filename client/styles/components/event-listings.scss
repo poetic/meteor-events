@@ -1,0 +1,21 @@
+.event-listings {
+  margin: 0;
+  background-color: gray;
+  color: white;
+
+  li {
+    position: relative;
+    width: 100%;
+    height: 200px;
+
+    .event-preview-details {
+      position: absolute;
+      bottom: 0;
+      margin: 10px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
