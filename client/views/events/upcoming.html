@@ -1,26 +1,14 @@
 <template name='EventsUpcoming'>
-  <div class='event-preview'>
-    <div class='event-preview-details'>
-      <p>Ben's BBQ Bonanza</p>
-      <p>Sunday Oct 15 2:00pm</p>
-    </div>
-  </div>
-  <div class='event-preview'>
-    <div class='event-preview-details'>
-      <p>Donna's Big Birthday Night Out!</p>
-      <p>Saturday Dec 6 8:00pm</p>
-    </div>
-  </div>
-  <div class='event-preview'>
-    <div class='event-preview-details'>
-      <p>Josie's 1st Birthday!</p>
-      <p>Sunday Jan 12 2:00pm</p>
-    </div>
-  </div>
-  <div class='event-preview'>
-    <div class='event-preview-details'>
-      <p>Mountain Biking - Anthills Edition</p>
-      <p>Wednesday Nov 25 12:45am</p>
-    </div>
+  <div class='swiper-slide'>
+    <ul class='event-previews'>
+      {{#each upcomingEvents}}
+        <li>
+          <div class='event-preview-details'>
+            <p>{{title}}</p>
+            <p>Sunday Oct 15 2:00pm</p>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
   </div>
 </template>
