@@ -1,0 +1,9 @@
+<template name='EventsShowWall'>
+  <div class='swiper-slide'>
+    <ul class='wall-posts'>
+      {{#each currentEvent.comments}}
+        <li><p>{{body}}</p></li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
