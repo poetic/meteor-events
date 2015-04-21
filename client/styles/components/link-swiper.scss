@@ -1,9 +1,13 @@
-.link-swiper {
+.nav-slides {
   background-color: black;
   height: 70px;
   color: gray;
   text-align: center;
   border-bottom: 1px solid gray;
+
+  &.event-show {
+    height: 50px;
+  }
 
   .swiper-slide {
     width: 40%;

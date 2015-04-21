@@ -1,5 +1,5 @@
 Template.EventsIndex.created = function(){
-  this.data.linksOptions = {
+  this.data.navOptions = {
     centeredSlides: true,
     slidesPerView: 'auto',
     slideToClickedSlide: true,
@@ -7,7 +7,7 @@ Template.EventsIndex.created = function(){
     initialSlide: 1,
   };
 
-  this.data.slidesOptions = {
+  this.data.slideOptions = {
     initialSlide: 1,
   };
 
