@@ -72,6 +72,9 @@ CommentSchema = new SimpleSchema({
   body: {
     type: String
   },
+  created: {
+    type: Date
+  },
   imageUrl: {
     type: String,
     optional: true

@@ -105,18 +105,22 @@ Meteor.startup(function(){
           user: user1,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
+          created: new Date(),
         }, {
           user: user2,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
+          created: new Date(),
         }, {
           user: user1,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
+          created: new Date(),
         }, {
           user: user3,
           body: faker.lorem.sentence(),
           imageUrl: faker.image.imageUrl(),
+          created: new Date(),
         }],
       });
     });
