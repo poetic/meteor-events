@@ -17,7 +17,7 @@
     options=slidesOptions param=param classNames='slide-swiper'
   }}
     {{> EventsRsvp}}
-    {{> EventsListing eventsListing=upcomingEvents}}
-    {{> EventsListing eventsListing=pastEvents}}
+    {{> _eventsList eventsList=upcomingEvents}}
+    {{> _eventsList eventsList=pastEvents}}
   {{/swiperSlides}}
 </template>
