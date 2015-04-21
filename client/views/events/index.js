@@ -3,7 +3,7 @@ Template.EventsIndex.created = function(){
     centeredSlides: true,
     slidesPerView: 'auto',
     slideToClickedSlide: true,
-    touchRatio: 0.35,
+    touchRatio: 0.5,
     initialSlide: 1,
   };
 

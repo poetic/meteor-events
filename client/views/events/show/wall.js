@@ -1,3 +1,12 @@
+Template.EventsShowWall.rendered = function(){
+  var windowHeight = $(window).height();
+
+  var occupied = $('.cover-photo').height() + $('.link-swiper').height();
+  var availableHeight = windowHeight - occupied;
+
+  this.$('.wall-posts').height(availableHeight);
+};
+
 Template.EventsShowWall.events({
   'submit .new-comment': function(event){
     event.preventDefault();
@@ -24,6 +33,8 @@ Template.EventsShowWall.helpers({
   username: function(){
     var userId = this.user;
 
-    return Users.findOne(userId).fullName;
+    if (Users.findOne(userId)) {
+      return Users.findOne(userId).fullName;
+    }
   }
 });
