@@ -1,7 +1,7 @@
 Template._eventsList.events({
   'click li': function(){
-    var userId = Router.current().params._id;
+    var userId = Router.current().params.user_id;
 
-    Router.go('events.show', { _id: userId, event_id: this._id });
+    Router.go('events.show', { user_id: userId, event_id: this._id });
   }
 });
