@@ -73,6 +73,7 @@ CommentSchema = new SimpleSchema({
     type: String
   },
   imageUrl: {
-    type: String
-  }
+    type: String,
+    optional: true
+  },
 });
