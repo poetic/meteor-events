@@ -28,7 +28,7 @@ Meteor.startup(function(){
     _(10).times(function(){
       Events.insert({
         user: user1,
-        coverPhoto: faker.image.imageUrl(),
+        coverPhoto: faker.image.image(),
         title: faker.name.findName(),
         description: faker.lorem.sentences(),
         isPlusOne: true,
