@@ -12,4 +12,4 @@ Router.route('/users/:_id/events/:event_id/planning', {
 
 Router.route('/users/:_id/events/:event_id/attending', {
   name: 'events.show.attending'
-})
+});
