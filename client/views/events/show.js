@@ -1,7 +1,7 @@
-Template.EventsShowAttending.created = function(){
+Template.EventsShow.created = function(){
   if (!this.data) { this.data = {} }
 
-  this.data.linksOptions = {
+  this.data.navOptions = {
     centeredSlides: true,
     slidesPerView: 'auto',
     slideToClickedSlide: true,
@@ -9,15 +9,23 @@ Template.EventsShowAttending.created = function(){
     initialSlide: 2,
   };
 
-  this.data.slidesOptions = {
+  this.data.slideOptions = {
     initialSlide: 2,
   };
 };
 
-Template.EventsShowAttending.rendered = function(){
+Template.EventsShow.rendered = function(){
   var swiper1 = this.$('.swiper-container')[0].swiper;
   var swiper2 = this.$('.swiper-container')[1].swiper;
 
   swiper1.params.control = swiper2;
   swiper2.params.control = swiper1;
 };
+
+Template.EventsShow.helpers({
+  isPlanner: function(){
+    if (this.currentEvent && this.currentEvent()) {
+      return Router.current().params.user_id === this.currentEvent().user;
+    }
+  },
+});
