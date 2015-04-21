@@ -1,21 +1,22 @@
 .nav-slides {
   background-color: black;
-  height: 70px;
+  height: 75px;
   color: gray;
-  text-align: center;
   border-bottom: 1px solid gray;
+  text-align: center;
 
-  &.event-show {
-    height: 50px;
-  }
+  /*&.event-show {*/
+    /*height: 50px;*/
+  /*}*/
 
   .swiper-slide {
+    margin-top: 35px;
     width: 40%;
     height: 40px;
-    padding-top: 30px;
   }
 
   .swiper-slide-active {
     color: white;
   }
 }
+
