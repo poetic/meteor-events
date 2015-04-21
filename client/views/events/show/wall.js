@@ -20,7 +20,7 @@ Template.EventsShowWall.events({
       created: new Date(),
     };
 
-    Events.update({ _id: eventId }, { $push: { comments: comment } });
+    Meteor.call('addComment', eventId, comment);
 
     event.target.comment.value = '';
   }
