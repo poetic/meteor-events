@@ -1,5 +1,10 @@
 .wall-posts {
+  height: 400px;
   margin: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+    /*bottom padding to clear the new comment form*/
+  padding-bottom: 43px;
 
   li {
     padding: 10px 10px 0 10px;
@@ -25,4 +30,14 @@
   }
 }
 
+.new-comment {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 10px 0 10px;
+
+  input {
+    margin-bottom: 0;
+  }
+}
 
