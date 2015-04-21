@@ -1,5 +1,5 @@
 Template.Index.events({
   'click li': function(){
-    Router.go('events.index', { _id: this._id });
+    Router.go('events.index', { user_id: this._id });
   }
 });
