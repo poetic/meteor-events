@@ -10,15 +10,24 @@ Template.EventsIndex.created = function(){
   this.data.slideOptions = {
     initialSlide: 1,
   };
-
-  this.data.param = 'slides';
 };
 
-
 Template.EventsIndex.rendered = function(){
+  setSlideHeight.call(this);
+
   var swiper1 = this.$('.swiper-container')[0].swiper;
   var swiper2 = this.$('.swiper-container')[1].swiper;
 
   swiper1.params.control = swiper2;
   swiper2.params.control = swiper1;
+};
+
+function setSlideHeight (){
+  var windowHeight = $(window).height();
+  var navHeight = $('.nav-slides').height();
+
+    // take off 1 extra pixel to prevent outer template from scrolling
+  var availableHeight = windowHeight - (navHeight + 1);
+
+  this.$('.main-slides').height(availableHeight);
 };
