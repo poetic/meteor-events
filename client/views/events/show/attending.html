@@ -1,0 +1,26 @@
+<template name='EventsShowAttending'>
+  <div class='cover-photo' style='background-image: url("{{currentEvent.coverPhoto}}")'>
+    <h5>{{currentEvent.title}}</h5>
+  </div>
+
+  {{#swiperSlides
+    options=linksOptions param='slides' classNames='link-swiper'
+  }}
+    <div class='swiper-slide'>Host</div>
+    <div class='swiper-slide'>Details</div>
+    <div class='swiper-slide'>The Wall</div>
+    <div class='swiper-slide'>Photos</div>
+    <div class='swiper-slide'>RSVP</div>
+  {{/swiperSlides}}
+
+  {{#swiperSlides
+    options=slidesOptions param='slides' classNames='slide-swiper'
+  }}
+    {{> EventsShowHost}}
+    {{> EventsShowDetails}}
+    {{> EventsShowWall}}
+    {{> EventsShowPhotos}}
+    {{> EventsShowRsvp}}
+  {{/swiperSlides}}
+
+</template>
