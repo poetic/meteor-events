@@ -1,5 +1,14 @@
 Template.EventsListing.events({
   'click li': function(){
-    Router.go('events.show', { _id: this.user, event_id: this._id });
+    var userId = Router.current().params._id;
+    var route;
+
+    if (userId === this.user) {
+      route = 'events.show.planning';
+    } else {
+      route = 'events.show.attending';
+    }
+
+    Router.go(route, { _id: userId, event_id: this._id });
   }
 });
