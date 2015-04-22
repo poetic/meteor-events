@@ -5,9 +5,13 @@
   border-bottom: 1px solid gray;
   text-align: center;
 
-  /*&.event-show {*/
-    /*height: 50px;*/
-  /*}*/
+  &.nav-slides-show {
+    height: 55px;
+
+    .swiper-slide {
+      margin-top: 18px;
+    }
+  }
 
   .swiper-slide {
     margin-top: 35px;
