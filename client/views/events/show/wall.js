@@ -12,7 +12,7 @@ Template.EventsShowWall.events({
     event.preventDefault();
 
     var routeParams = Router.current().params;
-    var eventId = routeParams.event_id
+    var eventId = routeParams.event_id;
 
     var comment = {
       user: routeParams._id,

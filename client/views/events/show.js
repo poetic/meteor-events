@@ -1,5 +1,5 @@
 Template.EventsShow.created = function(){
-  this.subscribe('event')
+  this.subscribe('event');
 };
 
 Template.EventsShow.rendered = function(){
@@ -12,7 +12,7 @@ Template.EventsShow.rendered = function(){
 
 Template.EventsShow.helpers({
   isPlanner: function(){
-    if (this.currentEvent && this.currentEvent()) {
+    if (this.currentEvent()) {
       return Router.current().params.user_id === this.currentEvent().user;
     }
   },
