@@ -6,7 +6,7 @@ Template.EventsShowWall.events({
     var eventId = routeParams.event_id;
 
     var comment = {
-      user: routeParams._id,
+      user: routeParams.user_id,
       body: event.target.comment.value,
       created: new Date(),
     };
