@@ -17,3 +17,13 @@ Template.EventsShow.helpers({
     }
   },
 });
+
+function setEventsShowHeight (){
+  var windowHeight = $(window).height();
+  var occupied = (
+    $('.status-bar').height() + $('.cover-photo-inner').height() + ($('.nav-slides').height() + 1)
+  );
+  var availableHeight = windowHeight - occupied;
+
+  this.$('.main-slides').height(availableHeight);
+};

@@ -1,12 +1,3 @@
-Template.EventsShowWall.rendered = function(){
-  var windowHeight = $(window).height();
-
-  var occupied = $('.cover-photo').height() + $('.link-swiper').height();
-  var availableHeight = windowHeight - occupied;
-
-  this.$('.wall-posts').height(availableHeight);
-};
-
 Template.EventsShowWall.events({
   'submit .new-comment': function(event){
     event.preventDefault();
