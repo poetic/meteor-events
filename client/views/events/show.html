@@ -3,49 +3,45 @@
     <h5>{{currentEvent.title}}</h5>
   </div>
 
-  {{!
-    Swiper.js does not work if swiper-slide divs are separated by an #if statement
-  }}
+  {{#if Template.subscriptionsReady}}
+    {{#if isPlanner}}
+      {{#swiperSlides
+        options=plannerNavOptions param='slides' classNames='nav-slides'
+      }}
+        <div class='swiper-slide'>Host</div>
+        <div class='swiper-slide'>Details</div>
+        <div class='swiper-slide'>True The Wall</div>
+        <div class='swiper-slide'>Guest List</div>
+      {{/swiperSlides}}
 
-  {{#if isPlanner}}
-    {{#swiperSlides
-      options=navOptions param='slides' classNames='nav-slides event-show'
-    }}
-      <div class='swiper-slide'>Host</div>
-      <div class='swiper-slide'>Details</div>
-      <div class='swiper-slide'>The Wall</div>
-      <div class='swiper-slide'>Guest List</div>
-    {{/swiperSlides}}
+      {{#swiperSlides
+        options=plannerSlideOptions param='slides' classNames='main-slides'
+      }}
+        {{> EventsShowHost}}
+        {{> EventsShowDetails}}
+        {{> EventsShowWall}}
+        {{> EventsShowGuestList}}
+      {{/swiperSlides}}
 
-    {{#swiperSlides
-      options=slideOptions param='slides' classNames='main-slides'
-    }}
-      {{> EventsShowHost}}
-      {{> EventsShowDetails}}
-      {{> EventsShowWall}}
-      {{> EventsShowGuestList}}
-    {{/swiperSlides}}
+    {{else}}
 
-  {{else}}
+      {{#swiperSlides
+        options=plannerNavOptions param='slides' classNames='nav-slides'
+      }}
+        <div class='swiper-slide'>Host</div>
+        <div class='swiper-slide'>Details</div>
+        <div class='swiper-slide'>False The Wall</div>
+        <div class='swiper-slide'>Guest List</div>
+      {{/swiperSlides}}
 
-    {{#swiperSlides
-      options=navOptions param='slides' classNames='nav-slides'
-    }}
-      <div class='swiper-slide'>Host</div>
-      <div class='swiper-slide'>Details</div>
-      <div class='swiper-slide'>The Wall</div>
-      <div class='swiper-slide'>Photos</div>
-      <div class='swiper-slide'>RSVP</div>
-    {{/swiperSlides}}
-
-    {{#swiperSlides
-      options=slideOptions param='slides' classNames='main-slides'
-    }}
-      {{> EventsShowHost}}
-      {{> EventsShowDetails}}
-      {{> EventsShowWall}}
-      {{> EventsShowPhotos}}
-      {{> EventsShowRsvp}}
-    {{/swiperSlides}}
+      {{#swiperSlides
+        options=plannerSlideOptions param='slides' classNames='main-slides'
+      }}
+        {{> EventsShowHost}}
+        {{> EventsShowDetails}}
+        {{> EventsShowWall}}
+        {{> EventsShowGuestList}}
+      {{/swiperSlides}}
+    {{/if}}
   {{/if}}
 </template>

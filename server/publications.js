@@ -7,5 +7,5 @@ Meteor.publish('events', function(){
 });
 
 Meteor.publish('event', function(eventId){
-  return Events.find(eventId)
+  return Events.find({ _id: eventId });
 });

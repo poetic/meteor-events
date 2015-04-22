@@ -2,6 +2,7 @@ EventsShowController = ApplicationController.extend({
   waitOn: function(){
     var eventId = Router.current().params.event_id;
 
+    Meteor.subscribe('users');
     Meteor.subscribe('event', eventId);
   },
 
@@ -12,7 +13,17 @@ EventsShowController = ApplicationController.extend({
     return {
       currentEvent: function(){
         return Events.findOne(eventId);
-      }
+      },
+      plannerNavOptions: {
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        slideToClickedSlide: true,
+        touchRatio: 0.5,
+        initialSlide: 2,
+      },
+      plannerSlideOptions: {
+        initialSlide: 2,
+      },
     };
-  }
+  },
 });

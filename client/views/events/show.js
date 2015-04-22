@@ -1,17 +1,5 @@
 Template.EventsShow.created = function(){
-  if (!this.data) { this.data = {} }
-
-  this.data.navOptions = {
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    slideToClickedSlide: true,
-    touchRatio: 0.5,
-    initialSlide: 2,
-  };
-
-  this.data.slideOptions = {
-    initialSlide: 2,
-  };
+  this.subscribe('event')
 };
 
 Template.EventsShow.rendered = function(){
