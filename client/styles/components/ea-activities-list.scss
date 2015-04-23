@@ -41,7 +41,10 @@
       position: absolute;
       right: 10px;
       top: 110px;
-      padding: 10px;
+
+      &::before {
+        padding: 30px;
+      }
     }
   }
 }

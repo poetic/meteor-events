@@ -18,11 +18,11 @@ EventsShowController = ApplicationController.extend({
         centeredSlides: true,
         slidesPerView: 'auto',
         slideToClickedSlide: true,
-        touchRatio: 0.5,
         initialSlide: 2,
       },
       plannerSlideOptions: {
         initialSlide: 2,
+        threshold: 10,
       },
     };
   },
