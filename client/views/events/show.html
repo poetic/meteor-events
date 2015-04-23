@@ -26,6 +26,10 @@
         {{> EventsShowDetails}}
         {{> EventsShowWall}}
         {{> EventsShowGuestList}}
+
+        <form class='new-comment'>
+          <input type='text' name='comment' placeholder='Message...'>
+        </form>
       {{/swiperSlides}}
 
     {{else}}
@@ -48,6 +52,10 @@
         {{> EventsShowWall}}
         {{> EventsShowPhotos}}
         {{> EventsShowRsvp}}
+
+        <form class='new-comment'>
+          <input type='text' name='comment' placeholder='Message...'>
+        </form>
       {{/swiperSlides}}
     {{/if}}
   {{/if}}

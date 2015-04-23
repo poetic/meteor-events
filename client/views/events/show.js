@@ -18,6 +18,25 @@ Template.EventsShow.helpers({
   },
 });
 
+Template.EventsShow.events({
+  'submit .new-comment': function(event){
+    event.preventDefault();
+
+    var routeParams = Router.current().params;
+    var eventId = routeParams.event_id;
+
+    var comment = {
+      user: routeParams.user_id,
+      body: event.target.comment.value,
+      created: new Date(),
+    };
+
+    Meteor.call('addComment', eventId, comment);
+
+    event.target.comment.value = '';
+  }
+});
+
 function setEventsShowHeight (){
   var windowHeight = $(window).height();
   var occupied = (
@@ -26,4 +45,11 @@ function setEventsShowHeight (){
   var availableHeight = windowHeight - occupied;
 
   this.$('.main-slides').height(availableHeight);
+};
+
+function setCommentFieldPosition (){
+  var windowWidth = $(window).width();
+  var leftOffset = windowWidth * 2;
+
+  this.$('.new-comment').css({ left: leftOffset });
 };
