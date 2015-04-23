@@ -5,12 +5,19 @@ Template.EventsShowDetails.events({
 
     var el = event.target;
 
+      // remove the 40px top/bottom padding of the li
+    var parentHeight = el.parentNode.scrollHeight - 40;
+
     if ($(el).hasClass('expanded')) {
       $(el).removeClass('expanded');
+
       $(el).velocity('reverse');
+      $(el).parent().velocity('reverse');
     } else {
       $(el).addClass('expanded');
-      $.Velocity(el, { rotateZ: '180deg', duration: 250 });
+
+      $.Velocity(el, { rotateZ: '180deg' }, { duration: 200 });
+      $.Velocity($(el).parent(), { height: parentHeight }, { duration: 200 });
     }
   },
 });
