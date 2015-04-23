@@ -1,0 +1,44 @@
+.ea-activities-list {
+  margin: 0;
+
+  li {
+    position: relative;
+    padding: 20px 10px 20px 10px;
+    border-bottom: 1px solid lightgray;
+
+    h5 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+
+      span {
+        color: gray;
+        font-size: 15px;
+        margin-left: 10px;
+      }
+    }
+
+    .activity-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .activity-datetime {
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .activity-address-box {
+      margin-right: 50px;
+    }
+
+    i {
+      position: absolute;
+      right: 10px;
+      top: 110px;
+      padding: 10px;
+    }
+  }
+}
