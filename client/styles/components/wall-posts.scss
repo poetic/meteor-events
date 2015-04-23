@@ -6,6 +6,10 @@
 
   li {
     padding: 10px 10px 0 10px;
+
+    &:last-child {
+      padding-bottom: 58px;
+    }
   }
 
   .commenter-details {
