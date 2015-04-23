@@ -1,7 +1,8 @@
 Template.EventsShowWall.helpers({
-  commentedAt: function(){
+  timeAgoPosted: function(){
     return moment(this.created).fromNow();
   },
+
   username: function(){
     var userId = this.user;
 
