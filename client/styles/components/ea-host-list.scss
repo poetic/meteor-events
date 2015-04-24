@@ -1,0 +1,55 @@
+.ea-host-list {
+  margin: 0;
+
+  .host-details {
+    padding: 20px 10px 20px 10px;
+    border-bottom: 1px solid lightgray;
+
+    h5 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    span {
+      text-transform: capitalize;
+    }
+
+    p {
+      margin-bottom: 0;
+      margin-right: 60px;
+    }
+
+    .host-email {
+      position: relative;
+
+      i {
+        padding: 10px;
+        position: absolute;
+        top: -20px;
+        right: 0;
+        font-size: 25px;
+      }
+    }
+
+    .host-phone {
+      position: relative;
+
+      p {
+        margin-right: 100px;
+      }
+
+      .host-phone-icons {
+        position: absolute;
+        right: 0;
+        top: -10px;
+
+        i {
+          padding: 10px;
+          position: static;
+          top: 0;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
