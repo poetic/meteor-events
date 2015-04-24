@@ -16,3 +16,5 @@ aldeed:collection2
 msavin:mongol
 momentjs:moment
 velocityjs:velocityjs
+dburles:google-maps
+reactive-dict
