@@ -3,24 +3,40 @@
     <ul class='ea-activities-list'>
       {{#each currentEvent.activities}}
         <li>
-          <h5 class='activity-title'>{{title}}</h5>
-          <h5>
-            {{formattedDate}} <span>{{formattedStartTime}} - {{formattedEndTime}}</span>
-          </h5>
+          <div class='preview-container'>
+            <h5 class='activity-title'>{{title}}</h5>
+            <h5>
+              {{formattedDate}} <span>{{formattedStartTime}} - {{formattedEndTime}}</span>
+            </h5>
 
-          <div class='activity-address-box'>
-            <p>{{address.address1}}</p>
-            <p>{{address.address2}}</p>
-            <p>{{address.city}}, {{address.state}} {{address.zipCode}}</p>
+            <div class='activity-address-box'>
+              <p>{{address.address1}}</p>
+              <p>{{address.address2}}</p>
+              <p>{{address.city}}, {{address.state}} {{address.zipCode}}</p>
+            </div>
+
+            <i class='more-details mdi-hardware-keyboard-arrow-down small'></i>
           </div>
-          <i class='more-details mdi-hardware-keyboard-arrow-down small'></i>
 
-          <div class='transit'>
-            {{transit}}
+          <div class='map-container'>
+            <img src='{{staticMapUrl}}'>
           </div>
 
-          <div class='attire'>
-            {{attire}}
+          <div class='more-details-container'>
+            <div class='more-detail'>
+              <p class='more-detail-heading'>Transit / Parking</p>
+              <p class='more-detail-text'>{{transit}}</p>
+            </div>
+
+            <div class='more-detail'>
+              <p class='more-detail-heading'>Attire / Dress Code</p>
+              <p class='more-detail-text'>{{attire}}</p>
+            </div>
+
+            <div class='more-detail'>
+              <p class='more-detail-heading'>Notes</p>
+              <p class='more-detail-text'>{{notes}}</p>
+            </div>
           </div>
         </li>
       {{/each}}
