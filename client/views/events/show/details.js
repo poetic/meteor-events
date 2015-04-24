@@ -7,25 +7,27 @@ Template.EventsShowDetails.rendered = function(){
 };
 
 Template.EventsShowDetails.events({
-  'click .more-details': function(event){
+  'click .touch-area': function(event){
     event.preventDefault();
     event.stopPropagation();
 
-    var el = event.target;
+    var touchArea = event.target;
+    var activityCard = $(touchArea).parent();
+    var arrow = activityCard.find('.more-details');
 
       // remove the 40px top/bottom padding of the li
-    var parentHeight = el.parentNode.parentNode.scrollHeight - 40;
+    var parentHeight = activityCard[0].scrollHeight - 40;
 
-    if ($(el).hasClass('expanded')) {
-      $(el).removeClass('expanded');
+    if (arrow.hasClass('expanded')) {
+      arrow.removeClass('expanded');
 
-      $(el).velocity('reverse');
-      $(el).parent().parent().velocity('reverse');
+      arrow.velocity('reverse');
+      activityCard.velocity('reverse');
     } else {
-      $(el).addClass('expanded');
+      arrow.addClass('expanded');
 
-      $.Velocity(el, { rotateZ: '180deg' }, { duration: 200 });
-      $.Velocity($(el).parent().parent(),
+      $.Velocity(arrow, { rotateZ: '180deg' }, { duration: 200 });
+      $.Velocity(activityCard,
         { height: parentHeight }, { duration: 200 }
       );
     }
