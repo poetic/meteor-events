@@ -34,7 +34,13 @@ Template.EventsShow.events({
     Meteor.call('addComment', eventId, comment);
 
     event.target.comment.value = '';
-  }
+  },
+
+  'click i': function(){
+    var userId = Router.current().params.user_id;
+
+    Router.go('events.index', { user_id: userId });
+  },
 });
 
 function setEventsShowHeight (){
