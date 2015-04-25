@@ -49,31 +49,12 @@ Template.EventsShowDetails.helpers({
   staticMapUrl: function(address){
     var mapHeight = '100';
     var mapWidth = Template.instance().state.get('mapWidth');
-    var fullAddress = encodeFullAddress(this.address);
+    var encodedAddress = encodeFullAddress(this.address);
 
     if (mapWidth) {
-      return buildMapUrl(fullAddress, mapHeight, mapWidth);
+      return buildMapUrl(encodedAddress, {
+        width: mapWidth, height: mapHeight
+      });
     }
   }
 });
-
-function encodeFullAddress (address){
-  var fullAddress = (
-    address.address1 + ' ' +
-    address.address2 + ' ' +
-    address.city + ', ' +
-    address.state + ' ' +
-    address.zipCode
-  );
-
-  return encodeURIComponent(fullAddress);
-};
-
-function buildMapUrl (address, mapHeight, mapWidth){
-  var url = Meteor.settings.public.googleApiUrl +
-    '?markers=' + address +
-    '&size=' + mapWidth + 'x' + mapHeight +
-    '&key=' + Meteor.settings.public.googleApiKey;
-
-  return url;
-};
