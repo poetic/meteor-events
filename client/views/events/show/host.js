@@ -14,8 +14,3 @@ Template.EventsShowHost.events({
     window.open('sms:' + this.phone, '_system');
   },
 });
-
-function stopEvent (event){
-  event.preventDefault();
-  event.stopPropagation();
-};

@@ -20,7 +20,7 @@ Template.EventsShow.helpers({
 
 Template.EventsShow.events({
   'submit .new-comment': function(event){
-    event.preventDefault();
+    stopEvent(event);
 
     var routeParams = Router.current().params;
     var eventId = routeParams.event_id;

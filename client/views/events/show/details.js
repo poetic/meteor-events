@@ -8,8 +8,7 @@ Template.EventsShowDetails.rendered = function(){
 
 Template.EventsShowDetails.events({
   'click .touch-area': function(event){
-    event.preventDefault();
-    event.stopPropagation();
+    stopEvent(event);
 
     var touchArea = event.target;
     var activityCard = $(touchArea).parent();
