@@ -24,6 +24,14 @@ EventsShowController = ApplicationController.extend({
         initialSlide: 2,
         threshold: 10,
       },
+      guests: function(){
+        var guestIds = Events.findOne(eventId).guests;
+
+          // _id key has to be declared as a string for this to work.
+          // this is probably related to how the user is stored
+          // to the event in seeds.js
+        return Users.find({ '_id': { $in: guestIds } });
+      },
     };
   },
 });
