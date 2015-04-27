@@ -29,7 +29,7 @@ Events.attachSchema(new SimpleSchema({
     defaultValue: [],
   },
   guests: {
-    type: [String],
+    type: [GuestSchema],
     defaultValue: [],
   },
 }));

@@ -80,3 +80,33 @@ CommentSchema = new SimpleSchema({
     optional: true
   },
 });
+
+GuestSchema = new SimpleSchema({
+  name: {
+    type: String
+  },
+  emailOrPhone: {
+    type: String
+  },
+  invited: {
+    type: Boolean
+  },
+  attending: {
+    type: Boolean
+  },
+  plusOne: {
+    type: Boolean
+  },
+  replied: {
+    type: Boolean
+  },
+  mailStatus: {
+    type: String
+  },
+    // initially a guest may not have a user account because all we may have
+    // is a name and phone number. when the guest becomes a user this field will
+    // be populated and the event will be added to the user's events array.
+  guest: {
+    type: String
+  },
+});
