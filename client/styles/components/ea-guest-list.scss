@@ -12,6 +12,11 @@
     text-transform: uppercase;
     font-size: 18px;
   }
+
+  h5 {
+    margin: 10px 0 20px 0;
+    text-align: center;
+  }
 }
 
 .ea-guest-list {
@@ -32,5 +37,31 @@
     &.no {
       border-bottom: 2px solid red;
     }
+  }
+
+  .guest-name {
+    position: relative;
+    padding-left: 10px;
+    border-bottom: 1px solid lightgray;
+
+    i {
+      position: absolute;
+      top: -7px;
+      right: 0;
+      font-size: 25px;
+      color: lightgray;
+    }
+
+    .guest-mail-status {
+      position: absolute;
+      top: -9px;
+      right: 10px;
+      color: lightgray;
+      text-transform: capitalize;
+    }
+  }
+
+  p {
+    margin: 10px 0 10px 0;
   }
 }
