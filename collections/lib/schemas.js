@@ -85,7 +85,10 @@ GuestSchema = new SimpleSchema({
   name: {
     type: String
   },
-  emailOrPhone: {
+  email: {
+    type: String
+  },
+  phone: {
     type: String
   },
   invited: {
