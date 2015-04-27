@@ -12,5 +12,9 @@ Users.attachSchema(new SimpleSchema({
   },
   phone: {
     type: String
-  }
+  },
+  events: {
+    type: [String],
+    defaultValue: [],
+  },
 }));

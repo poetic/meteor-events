@@ -1,5 +1,8 @@
 Meteor.startup(function(){
-  var user1, user2, user3;
+  //Users.remove({})
+  //Events.remove({})
+  var user1, user2, user3, user4, user5, user6;
+  var events = [];
 
   if (!Users.find().count()) {
     user1 = Users.insert({
@@ -22,11 +25,32 @@ Meteor.startup(function(){
       secondaryEmail: faker.internet.email(),
       phone: faker.phone.phoneNumber(),
     });
+
+    user4 = Users.insert({
+      fullName: faker.name.findName(),
+      email: faker.internet.email(),
+      secondaryEmail: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
+    });
+
+    user5 = Users.insert({
+      fullName: faker.name.findName(),
+      email: faker.internet.email(),
+      secondaryEmail: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
+    });
+
+    user6 = Users.insert({
+      fullName: faker.name.findName(),
+      email: faker.internet.email(),
+      secondaryEmail: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
+    });
   }
 
   if (!Events.find().count()) {
-    _(10).times(function(){
-      Events.insert({
+    for (var i = 0; i < 10; i++) {
+      events[i] = Events.insert({
         user: user1,
         coverPhoto: faker.image.image(),
         title: faker.name.findName(),
@@ -122,7 +146,14 @@ Meteor.startup(function(){
           imageUrl: faker.image.imageUrl(),
           created: new Date(),
         }],
+        guests: [user2, user3, user4, user5, user6],
       });
-    });
+    };
   }
+
+  //Users.update({ _id: user2 }, { $push: { events: { $each: [events[1], events[3]] } } })
+  //Users.update({ _id: user3 }, { $push: { events: { $each: [events[0], events[5]] } } })
+  //Users.update({ _id: user4 }, { $push: { events: { $each: [events[1], events[3], events[5]] } } })
+  //Users.update({ _id: user5 }, { $push: { events: { $each: [events[2], events[4], events[5]] } } })
+  //Users.update({ _id: user6 }, { $push: { events: { $each: [events[0], events[2], events[6]] } } })
 });

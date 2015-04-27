@@ -3,10 +3,9 @@ Events = new Mongo.Collection('events');
 Events.attachSchema(new SimpleSchema({
   user: {
     type: String,
-    optional: true,
   },
   coverPhoto: {
-    type: String
+    type: String,
   },
   title: {
     type: String
@@ -18,13 +17,20 @@ Events.attachSchema(new SimpleSchema({
     type: Boolean
   },
   hosts: {
-    type: [HostSchema]
+    type: [HostSchema],
+    defaultValue: [],
   },
   activities: {
-    type: [ActivitySchema]
+    type: [ActivitySchema],
+    defaultValue: [],
   },
   comments: {
-    type: [CommentSchema]
+    type: [CommentSchema],
+    defaultValue: [],
+  },
+  guests: {
+    type: [String],
+    defaultValue: [],
   },
 }));
 
