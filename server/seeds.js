@@ -146,14 +146,21 @@ Meteor.startup(function(){
           imageUrl: faker.image.imageUrl(),
           created: new Date(),
         }],
-        guests: [user2, user3, user4, user5, user6],
       });
     };
   }
 
-  //Users.update({ _id: user2 }, { $push: { events: { $each: [events[1], events[3]] } } })
-  //Users.update({ _id: user3 }, { $push: { events: { $each: [events[0], events[5]] } } })
-  //Users.update({ _id: user4 }, { $push: { events: { $each: [events[1], events[3], events[5]] } } })
-  //Users.update({ _id: user5 }, { $push: { events: { $each: [events[2], events[4], events[5]] } } })
-  //Users.update({ _id: user6 }, { $push: { events: { $each: [events[0], events[2], events[6]] } } })
+  Events.update({_id: events[0]}, {$push: {guests: {$each: [user3, user6]}}})
+  Events.update({_id: events[1]}, {$push: {guests: {$each: [user2, user4]}}})
+  Events.update({_id: events[2]}, {$push: {guests: {$each: [user5, user6]}}})
+  Events.update({_id: events[3]}, {$push: {guests: {$each: [user2, user4]}}})
+  Events.update({_id: events[4]}, {$push: {guests: {$each: [user5]}}})
+  Events.update({_id: events[5]}, {$push: {guests: {$each: [user3, user4, user5]}}})
+  Events.update({_id: events[6]}, {$push: {guests: {$each: [user6]}}})
+
+  Users.update({ _id: user2 }, { $push: { events: { $each: [events[1], events[3]] } } })
+  Users.update({ _id: user3 }, { $push: { events: { $each: [events[0], events[5]] } } })
+  Users.update({ _id: user4 }, { $push: { events: { $each: [events[1], events[3], events[5]] } } })
+  Users.update({ _id: user5 }, { $push: { events: { $each: [events[2], events[4], events[5]] } } })
+  Users.update({ _id: user6 }, { $push: { events: { $each: [events[0], events[2], events[6]] } } })
 });
