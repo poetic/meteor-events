@@ -32,6 +32,7 @@ Template.EventsShow.events({
     };
 
     Meteor.call('addComment', eventId, comment);
+    scrollToBottom();
 
     event.target.comment.value = '';
   },
@@ -58,4 +59,10 @@ function setCommentFieldPosition (){
   var leftOffset = windowWidth * 2;
 
   this.$('.new-comment').css({ left: leftOffset });
+};
+
+function scrollToBottom (){
+  var newPost = $('.wall-slide li').last();
+
+  newPost.velocity('scroll', { container: $('.wall-slide') });
 };
