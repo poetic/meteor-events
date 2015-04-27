@@ -149,18 +149,78 @@ Meteor.startup(function(){
       });
     };
   }
+  var auser2 = Users.findOne({ _id: user2 })
+  var auser3 = Users.findOne({ _id: user3 })
+  var auser4 = Users.findOne({ _id: user4 })
+  var auser5 = Users.findOne({ _id: user5 })
+  var auser6 = Users.findOne({ _id: user6 })
 
-  Events.update({_id: events[0]}, {$push: {guests: {$each: [user3, user6]}}})
-  Events.update({_id: events[1]}, {$push: {guests: {$each: [user2, user4]}}})
-  Events.update({_id: events[2]}, {$push: {guests: {$each: [user5, user6]}}})
-  Events.update({_id: events[3]}, {$push: {guests: {$each: [user2, user4]}}})
-  Events.update({_id: events[4]}, {$push: {guests: {$each: [user5]}}})
-  Events.update({_id: events[5]}, {$push: {guests: {$each: [user3, user4, user5]}}})
-  Events.update({_id: events[6]}, {$push: {guests: {$each: [user6]}}})
+  //Events.update({_id: events[0]}, {$push: {guests: {$each: [{
+    //name: auser2.fullName,
+    //email: auser2.email,
+    //phone: auser2.phone,
+    //invited: true,
+    //attending: true,
+    //plusOne: true,
+    //replied: true,
+    //mailStatus: 'opened',
+    //guest: user2,
+  //}, {
+    //name: auser3.fullName,
+    //email: auser3.email,
+    //phone: auser3.phone,
+    //invited: false,
+    //attending: false,
+    //plusOne: false,
+    //replied: false,
+    //mailStatus: 'bounced',
+    //guest: user3,
+  //}, {
+    //name: auser5.fullName,
+    //email: auser5.email,
+    //phone: auser5.phone,
+    //invited: true,
+    //attending: true,
+    //plusOne: true,
+    //replied: true,
+    //mailStatus: 'opened',
+    //guest: user5,
+  //}, {
+    //name: auser4.fullName,
+    //email: auser4.email,
+    //phone: auser4.phone,
+    //invited: false,
+    //attending: false,
+    //plusOne: false,
+    //replied: false,
+    //mailStatus: 'bounced',
+    //guest: user4,
+  //}]}}});
 
-  Users.update({ _id: user2 }, { $push: { events: { $each: [events[1], events[3]] } } })
-  Users.update({ _id: user3 }, { $push: { events: { $each: [events[0], events[5]] } } })
-  Users.update({ _id: user4 }, { $push: { events: { $each: [events[1], events[3], events[5]] } } })
-  Users.update({ _id: user5 }, { $push: { events: { $each: [events[2], events[4], events[5]] } } })
-  Users.update({ _id: user6 }, { $push: { events: { $each: [events[0], events[2], events[6]] } } })
+  //Events.update({_id: events[1]}, {$push: {guests: {$each: [{
+    //name: auser4.fullName,
+    //email: auser4.email,
+    //phone: auser4.phone,
+    //invited: false,
+    //attending: false,
+    //plusOne: false,
+    //replied: false,
+    //mailStatus: 'bounced',
+    //guest: user4,
+  //}, {
+    //name: auser5.fullName,
+    //email: auser5.email,
+    //phone: auser5.phone,
+    //invited: true,
+    //attending: true,
+    //plusOne: true,
+    //replied: true,
+    //mailStatus: 'opened',
+    //guest: user5,
+  //}]}}})
+
+  //Users.update({ _id: user2 }, { $push: { events: { $each: [events[0]] } } })
+  //Users.update({ _id: user3 }, { $push: { events: { $each: [events[0]] } } })
+  //Users.update({ _id: user4 }, { $push: { events: { $each: [events[0], events[1]] } } })
+  //Users.update({ _id: user5 }, { $push: { events: { $each: [events[0], events[1]] } } })
 });
