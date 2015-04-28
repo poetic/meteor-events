@@ -31,3 +31,10 @@ function setSlideHeight (){
 
   this.$('.main-slides').height(availableHeight);
 };
+
+Template.EventsIndex.events({
+  'click #fixed-settings': function() {
+    $('#account').velocity({top: 0}, "swing");
+    return false;
+  },
+});
