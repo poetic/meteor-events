@@ -1,6 +1,4 @@
 <template name='EventsShow'>
-  <div class='status-bar'></div>
-
   <div class='cover-photo' style='background-image: url("{{currentEvent.coverPhoto}}")'>
     <div class='cover-photo-inner'>
       <i class='cover-photo-icon mdi-hardware-keyboard-arrow-up small'></i>
@@ -14,7 +12,7 @@
   {{#if Template.subscriptionsReady}}
     {{#if isPlanner}}
       {{#swiperSlides
-        options=plannerNavOptions param='slides' classNames='nav-slides nav-slides-show'
+        options=plannerNavOptions param='slides' classNames='navbar'
       }}
         <div class='swiper-slide'>Host</div>
         <div class='swiper-slide'>Details</div>

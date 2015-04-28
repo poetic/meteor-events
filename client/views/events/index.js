@@ -23,11 +23,13 @@ Template.EventsIndex.rendered = function(){
 };
 
 function setSlideHeight (){
-  var windowHeight = $(window).height();
-  var navHeight = $('.nav-slides').height();
+  var windowHeight    = $(window).height();
+  var navHeight       = $('.navbar').height();
+  var statusBarHeight = $('#status-bar').height();
 
     // take off 1 extra pixel to prevent outer template from scrolling
-  var availableHeight = windowHeight - (navHeight + 1);
+  var availableHeight = windowHeight - statusBarHeight - (navHeight + 1);
 
   this.$('.main-slides').height(availableHeight);
 };
+
