@@ -3,11 +3,16 @@ Template.EventsShow.created = function(){
 };
 
 Template.EventsShow.rendered = function(){
-  var swiper1 = this.$('.swiper-container')[0].swiper;
-  var swiper2 = this.$('.swiper-container')[1].swiper;
+  Meteor.setTimeout(function(){
+    setEventsShowHeight.call(this);
+    setCommentFieldPosition.call(this);
 
-  swiper1.params.control = swiper2;
-  swiper2.params.control = swiper1;
+    var swiper1 = this.$('.swiper-container')[0].swiper;
+    var swiper2 = this.$('.swiper-container')[1].swiper;
+
+    swiper1.params.control = swiper2;
+    swiper2.params.control = swiper1;
+  }.bind(this), 1000);
 };
 
 Template.EventsShow.helpers({
