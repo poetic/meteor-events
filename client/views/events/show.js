@@ -42,10 +42,20 @@ Template.EventsShow.events({
     event.target.comment.value = '';
   },
 
-  'click i': function(){
+  'click .cover-photo-icon': function(){
+    stopEvent(event);
     var userId = Router.current().params.user_id;
 
     Router.go('events.index', { user_id: userId });
+  },
+
+  'click #edit-button': function(event){
+    stopEvent(event);
+    var routeParams = Router.current().params;
+
+    //Router.go('events.edit', {
+      //user_id: routeParams.user_id, event_id: routeParams.event_id
+    //});
   },
 });
 
