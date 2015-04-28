@@ -1,0 +1,33 @@
+#status-bar {
+  position: static;
+  background: $black;
+  height: 23px;
+  width: 100%;
+  z-index: 9;
+}
+
+.navbar {
+  height: 55px;
+  background-color: $black;
+  color: $gray;
+  border-bottom: 1px solid $gray;
+  text-align: center;
+
+  .swiper-slide {
+    width: 40%;
+    height: 55px;
+    line-height: 55px;
+  }
+
+  .swiper-slide-active {
+    color: $white;
+  }
+}
+
+.slides-container {
+
+}
+
+.slides-container .short {
+
+}
