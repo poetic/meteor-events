@@ -15,10 +15,14 @@
       {{/each}}
 
       <p class='preview-invite'>Send myself a preview invite</p>
+
+      <div class='button-container'>
+        <button>Send Invites to {{uninvitedCount}} guests</button>
+      </div>
     </ul>
 
     <ul class='ea-guest-list'>
-      <li class='guest-list-heading yes'>Yes</li>
+      <li class='guest-list-heading yes'>Yes <span>{{yesCount}}</span></li>
 
       {{#each yesGuests}}
         <li class='guest-name'>
@@ -28,7 +32,7 @@
     </ul>
 
     <ul class='ea-guest-list'>
-      <li class='guest-list-heading no'>No</li>
+      <li class='guest-list-heading no'>No <span>{{noCount}}</span></li>
 
       {{#each noGuests}}
         <li class='guest-name'>
