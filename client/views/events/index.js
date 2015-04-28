@@ -34,6 +34,7 @@ function setSlideHeight (){
 
 Template.EventsIndex.events({
   'click #fixed-settings': function() {
+    $('#account').css('display', 'block');
     $('#account').velocity({top: 0}, "swing");
     return false;
   },

@@ -3,6 +3,8 @@ Template.Account.events({
     return false;
   },
   'click .close': function() {
-    $('#account').velocity('reverse');
+    $('#account').velocity('reverse', function() {
+      $('#account').css('display', 'none');
+    });
   },
 });

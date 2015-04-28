@@ -1,38 +1,43 @@
 <template name="Account">
 <form id="account">
-  <li>
+  <div class="header">
     <a class='close'> X </a>
-    Account
+    ACCOUNT
     <a> Log Out </a>
-  </li>
-  <li>YOUR DETAILS</li>
-  <li>
-    <div class="input-field">
-      <input id="full_name" type="text" class="validate">
-      <label for="full_name">FULL NAME</label>
-    </div>
-  </li>
-  <li>
-    <div class="input-field">
-      <input id="primary_email" type="text" class="validate">
-      <label for="primary_email">PRIMARY EMAIL</label>
-    </div>
-  </li>
-  <li>
-    <div class="input-field">
-      <input id="email_2" type="text" class="validate">
-      <label for="email_2">EMAIL 2</label>
-    </div>
-  </li>
-  <li>
-    <div class="input-field">
-      <input id="phone" type="text" class="validate">
-      <label for="phone">PHONE</label>
-    </div>
-  </li>
+  </div>
 
-  <button type="submit" class="waves-effect waves-light btn-large">
-    SAVE CHANGES
-  </button>
+  <ul>
+    <li class="title padded">YOUR DETAILS</li>
+    <li>
+      <div class="input-field">
+        <input id="full_name" type="text" class="validate">
+        <label for="full_name">FULL NAME</label>
+      </div>
+    </li>
+    <li>
+      <div class="input-field">
+        <input id="primary_email" type="text" class="validate">
+        <label for="primary_email">PRIMARY EMAIL</label>
+      </div>
+    </li>
+    <li>
+      <div class="input-field">
+        <input id="email_2" type="text" class="validate">
+        <label for="email_2">EMAIL 2</label>
+      </div>
+    </li>
+    <li>
+      <div class="input-field">
+        <input id="phone" type="text" class="validate">
+        <label for="phone">PHONE</label>
+      </div>
+    </li>
+  </ul>
+
+  <div class='padded'>
+    <button type="submit" class="save btn-large">
+      SAVE CHANGES
+    </button>
+  </div>
 </form>
 </template>
