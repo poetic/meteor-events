@@ -19,8 +19,82 @@
   }
 }
 
-.li-large {
+.li-lrg {
+  position: relative;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid $lightgray;
+  overflow-y: hidden;
+  height: 124px;
 
+  .li-lrg-preview {
+    padding: 0 10px 20px 10px;
+  }
+
+  .li-lrg-preview-heading {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+  }
+
+  .li-lrg-preview-subheading {
+    margin: 0 0 20px 0;
+  }
+
+  .li-lrg-preview-offset {
+    margin-left: 10px;
+    color: $gray;
+  }
+
+  .li-lrg-preview-items {
+    margin-right: 25px;
+
+    .li-lrg-preview-item {
+      margin: 0;
+    }
+  }
+
+  .li-lrg-preview-bottom-right {
+    position: absolute;
+    right: 10px;
+    top: 118px;
+  }
+
+  .li-lrg-touch-footer {
+    position: absolute;
+    top: 110px;
+    height: 75px;
+    width: 100%;
+    z-index: 9;
+  }
+
+  .li-lrg-banner {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    height: 100px;
+    width: 100%;
+  }
+
+  .li-lrg-more-details {
+    padding: 20px 10px 0 10px;
+
+    .detail {
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .detail-heading {
+      margin: 0 0 5px 0;
+      font-weight: bold;
+      color: $gray;
+      text-transform: uppercase;
+    }
+
+    .detail-text {
+      margin: 0;
+    }
+  }
 }
 
 .li-med {
@@ -54,6 +128,6 @@
   }
 }
 
-.li-small {
+.li-sml {
 
 }
