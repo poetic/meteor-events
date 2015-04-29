@@ -1,7 +1,3 @@
-.li {
-  padding: 10px;
-}
-
 .li-xl {
   position: relative;
   width: 100%;
@@ -11,6 +7,7 @@
     position: absolute;
     bottom: 10px;
     color: $white;
+    padding: 0 10px 0 10px;
   }
 
   .li-xl-footer-title {
@@ -26,8 +23,35 @@
 
 }
 
-.li-medium {
+.li-med {
+  padding: 20px 10px 20px 10px;
+  border-bottom: 1px solid lightgray;
 
+  .li-med-heading {
+    margin: 0;
+  }
+
+  .li-med-subheading {
+    text-transform: capitalize;
+  }
+
+  .li-med-line-item {
+    position: relative;
+
+    .li-med-line-item-right {
+      position: absolute;
+      right: 0;
+      top: -11px;
+    }
+  }
+
+  .li-med-line-item-text {
+    margin-right: 60px;
+
+    &.no-bottom-margin {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .li-small {

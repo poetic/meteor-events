@@ -1,19 +1,21 @@
 <template name='EventsShowHost'>
   <div class='swiper-slide'>
-    <ul class='ea-host-list'>
+    <ul class='slide-container'>
       {{#each currentEvent.hosts}}
-        <li class='host-details'>
-          <h5>{{name}}, <span>{{role}}</span></h5>
+        <li class='li-med'>
+          <h2 class='li-med-heading'>
+            {{name}}, <span class='li-med-subheading'>{{role}}</span>
+          </h2>
 
-          <div class='host-email'>
-            <p>{{email}}</p>
-            <i class='mdi-communication-email'></i>
+          <div class='li-med-line-item'>
+            <p class='li-med-line-item-text'>{{email}}</p>
+            <i class='li-med-line-item-right mdi-communication-email'></i>
           </div>
 
-          <div class='host-phone'>
-            <p>{{phone}}</p>
+          <div class='li-med-line-item'>
+            <p class='li-med-line-item-text no-bottom-margin'>{{phone}}</p>
 
-            <div class='host-phone-icons'>
+            <div class='li-med-line-item-right'>
               <i class='mdi-communication-phone'></i>
               <i class='mdi-communication-message'></i>
             </div>
