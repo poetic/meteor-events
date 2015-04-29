@@ -13,8 +13,18 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 25px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 20px;
+}
+
+h5 {
+  font-size: 0.9rem;
+  line-height: 15px;
 }
 
 button {
@@ -24,4 +34,8 @@ button {
   border-radius: 5px solid $black;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+i {
+  font-size: 2rem;
 }
