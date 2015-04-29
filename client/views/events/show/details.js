@@ -14,21 +14,21 @@ Template.EventsShowDetails.events({
     var activityCard = $(touchArea).parent();
     var arrow = activityCard.find('.arrow');
 
-      // remove the 40px top/bottom padding of the li
+      // remove 40px vertical padding from total height because it opens too far
     var totalCardHeight = activityCard[0].scrollHeight - 40;
 
-    if (arrow.hasClass('expanded')) {
-      arrow.removeClass('expanded');
-
-      arrow.velocity('reverse');
-      activityCard.velocity('reverse');
-    } else {
+    if (!arrow.hasClass('expanded')) {
       arrow.addClass('expanded');
 
       $.Velocity(arrow, { rotateZ: '180deg' }, { duration: 200 });
       $.Velocity(activityCard,
         { height: totalCardHeight }, { duration: 200 }
       );
+    } else {
+      arrow.removeClass('expanded');
+
+      arrow.velocity('reverse');
+      activityCard.velocity('reverse');
     }
   },
 });
