@@ -129,5 +129,30 @@
 }
 
 .li-sml {
+  padding: 10px 10px 0 10px;
+
+  .li-sml-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+    .li-sml-subheading {
+      font-weight: normal;
+      text-transform: initial;
+      color: $gray;
+      margin-left: 5px;
+    }
+  }
+
+  .li-sml-text {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 62px;
+  }
+}
+
+.li-tiny {
 
 }

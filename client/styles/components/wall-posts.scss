@@ -1,36 +1,3 @@
-.wall-posts {
-  margin: 0;
-    /*bottom padding to clear the new comment form*/
-  padding-bottom: 43px;
-
-  li {
-    padding: 10px 10px 0 10px;
-
-    &:last-child {
-      padding-bottom: 58px;
-    }
-  }
-
-  .commenter-details {
-    margin-bottom: 5px;
-
-    .username {
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 11px;
-    }
-
-    .comment-date {
-      font-size: 11px;
-      color: gray;
-    }
-  }
-
-  p {
-    margin: 0 0 10px 0;
-  }
-}
-
 .new-comment {
   border-top: 1px solid lightgray;
   background-color: white;
