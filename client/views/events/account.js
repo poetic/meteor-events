@@ -1,3 +1,9 @@
+Template.Account.onRendered(function(){
+  if(Router.current().params['show-account']) {
+    this.$('form').css('display', 'block').css('top', 0);
+  }
+});
+
 Template.Account.helpers({
   profile: function() {
     return Meteor.user().profile;
@@ -25,7 +31,7 @@ Template.Account.events({
 });
 
 function closeAccount() {
-  $('#account').velocity('reverse', function() {
+  $('#account').velocity({top: '100%'}, "swing", function() {
     $('#account').css('display', 'none');
   });
 }
