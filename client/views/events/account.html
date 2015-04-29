@@ -8,10 +8,10 @@
 
   <ul>
     <li class="title padded">YOUR DETAILS</li>
-    {{> AccountInput value=profile.fullName name="fullName" label="FULL NAME"}}
-    {{> AccountInput value=profile.email name="email" label="EMAIL"}}
-    {{> AccountInput value=profile.secondaryEmail name="secondaryEmail" label="SECONDARY EMAIL"}}
-    {{> AccountInput value=profile.phone name="phone" label="PHONE"}}
+    {{> AccountInput model=profile name="fullName"}}
+    {{> AccountInput model=profile name="email"}}
+    {{> AccountInput model=profile name="secondaryEmail"}}
+    {{> AccountInput model=profile name="phone"}}
   </ul>
 
   <div class='padded'>

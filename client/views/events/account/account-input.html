@@ -1,8 +1,8 @@
 <template name="AccountInput">
 <li>
   <div class="input-field">
-    <input id="{{name}}" name="{{name}}" type="text" class="validate" value="{{value}}">
-    <label class="{{#if value}}active{{/if}}" for="{{name}}">{{label}}</label>
+    <input id="{{name}}" name="{{name}}" type="text" class="validate" value="{{_value}}">
+    <label class="{{#if _value}}active{{/if}}" for="{{name}}">{{_label}}</label>
   </div>
 </li>
 </template>
