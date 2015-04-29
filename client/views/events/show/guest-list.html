@@ -1,14 +1,16 @@
 <template name='EventsShowGuestList'>
   <div class='swiper-slide'>
     <div class='ea-guest-list-header'>
-      <h5>{{attendingCount}} Guests Attending</h5>
+      <h5>{{yesGuests.length}} Guests Attending</h5>
       <button>Add Guests</button>
     </div>
 
     <ul class='ea-guest-list'>
-      <li class='guest-list-heading'>Not Yet Invited</li>
+      <li class='guest-list-heading'>
+        Not Yet Invited <span>{{notYetInvitedGuests.length}}</span>
+      </li>
 
-      {{#each uninvitedGuests}}
+      {{#each notYetInvitedGuests}}
         <li class='guest-name'>
           <p>{{email}}</p> <i class='mdi-hardware-keyboard-arrow-right'></i>
         </li>
@@ -22,7 +24,7 @@
     </ul>
 
     <ul class='ea-guest-list'>
-      <li class='guest-list-heading yes'>Yes <span>{{yesCount}}</span></li>
+      <li class='guest-list-heading yes'>Yes <span>{{yesGuests.length}}</span></li>
 
       {{#each yesGuests}}
         <li class='guest-name'>
@@ -32,7 +34,7 @@
     </ul>
 
     <ul class='ea-guest-list'>
-      <li class='guest-list-heading no'>No <span>{{noCount}}</span></li>
+      <li class='guest-list-heading no'>No <span>{{noGuests.length}}</span></li>
 
       {{#each noGuests}}
         <li class='guest-name'>
@@ -42,7 +44,7 @@
     </ul>
 
     <ul class='ea-guest-list'>
-      <li class='guest-list-heading'>No Reply</li>
+      <li class='guest-list-heading'>No Reply <span>{{noReplyGuests.length}}</span></li>
 
       {{#each noReplyGuests}}
         <li class='guest-name'>

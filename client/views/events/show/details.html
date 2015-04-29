@@ -1,43 +1,44 @@
 <template name='EventsShowDetails'>
   <div class='swiper-slide'>
-    <ul class='ea-activities-list'>
+    <ul class='slide-container'>
       {{#each currentEvent.activities}}
-        <li>
-          <div class='preview-container'>
-            <h5 class='activity-title'>{{title}}</h5>
-            <h5>
-              {{formattedDate}} <span>{{formattedStartTime}} - {{formattedEndTime}}</span>
-            </h5>
+        <li class='li-lrg'>
+          <div class='li-lrg-preview'>
+            <h2 class='li-lrg-preview-heading'>{{title}}</h2>
+            <h3 class='li-lrg-preview-subheading'>
+              {{formattedDate}}
+              <span class='li-lrg-preview-offset'>{{formattedStartTime}} - {{formattedEndTime}}</span>
+            </h3>
 
-            <div class='activity-address-box'>
-              <p>{{address.address1}}</p>
-              <p>{{address.address2}}</p>
-              <p>{{address.city}}, {{address.state}} {{address.zipCode}}</p>
+            <div class='li-lrg-preview-items'>
+              <p class='li-lrg-preview-item'>{{address.address1}}</p>
+              <p class='li-lrg-preview-item'>{{address.address2}}</p>
+              <p class='li-lrg-preview-item'>{{address.city}}, {{address.state}} {{address.zipCode}}</p>
             </div>
 
-            <i class='more-details mdi-hardware-keyboard-arrow-down small'></i>
+            <i class='arrow li-lrg-preview-bottom-right mdi-hardware-keyboard-arrow-down small'></i>
           </div>
 
-          <div class='touch-area'></div>
+          <div class='li-lrg-touch-footer'></div>
 
-          <div class='map-container'>
+          <div class='li-lrg-banner'>
             <img src='{{staticMapUrl}}'>
           </div>
 
-          <div class='more-details-container'>
-            <div class='more-detail'>
-              <p class='more-detail-heading'>Transit / Parking</p>
-              <p class='more-detail-text'>{{transit}}</p>
+          <div class='li-lrg-more-details'>
+            <div class='detail'>
+              <h5 class='detail-heading'>Transit / Parking</h5>
+              <p class='detail-text'>{{transit}}</p>
             </div>
 
-            <div class='more-detail'>
-              <p class='more-detail-heading'>Attire / Dress Code</p>
-              <p class='more-detail-text'>{{attire}}</p>
+            <div class='detail'>
+              <h5 class='detail-heading'>Attire / Dress Code</h5>
+              <p class='detail-text'>{{attire}}</p>
             </div>
 
-            <div class='more-detail'>
-              <p class='more-detail-heading'>Notes</p>
-              <p class='more-detail-text'>{{notes}}</p>
+            <div class='detail'>
+              <h5 class='detail-heading'>Notes</h5>
+              <p class='detail-text'>{{notes}}</p>
             </div>
           </div>
         </li>

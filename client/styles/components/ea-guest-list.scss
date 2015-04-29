@@ -44,6 +44,11 @@
     &.no {
       border-bottom: 2px solid red;
     }
+
+    span {
+      position: absolute;
+      right: 12px;
+    }
   }
 
   .guest-name {

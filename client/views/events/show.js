@@ -42,17 +42,27 @@ Template.EventsShow.events({
     event.target.comment.value = '';
   },
 
-  'click i': function(){
+  'click .cover-photo-icon': function(){
+    stopEvent(event);
     var userId = Router.current().params.user_id;
 
     Router.go('events.index', { user_id: userId });
+  },
+
+  'click #edit-button': function(event){
+    stopEvent(event);
+    var routeParams = Router.current().params;
+
+    //Router.go('events.edit', {
+      //user_id: routeParams.user_id, event_id: routeParams.event_id
+    //});
   },
 });
 
 function setEventsShowHeight (){
   var windowHeight = $(window).height();
   var occupied = (
-    $('.status-bar').height() + $('.cover-photo-inner').height() + ($('.nav-slides').height() + 1)
+    $('#status-bar').height() + $('.img-preview-inner').height() + ($('.navbar').height() + 1)
   );
   var availableHeight = windowHeight - occupied;
 

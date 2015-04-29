@@ -1,11 +1,11 @@
 <template name='_eventsList'>
   <div class='swiper-slide'>
-    <ul class='events-listing'>
+    <ul class='slide-container'>
       {{#each eventsList}}
-        <li style='background-image: url("{{coverPhoto}}");'>
-          <div class='event-listing-details'>
-            <h5>{{title}}</h5>
-            <p>{{eventStartTime}}</p>
+        <li class='li-xl' style='background-image: url("{{coverPhoto}}");'>
+          <div class='li-xl-footer'>
+            <h1 class='li-xl-footer-title'>{{title}}</h1>
+            <h2 class='li-xl-footer-subtitle'>{{eventStartTime}}</h2>
           </div>
         </li>
       {{/each}}
