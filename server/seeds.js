@@ -1,46 +1,46 @@
 Meteor.startup(function(){
-  //Users.remove({})
+  //Meteor.users.remove({})
   //Events.remove({})
   var user1, user2, user3, user4, user5, user6;
   var events = [];
 
-  if (!Users.find().count()) {
-    user1 = Users.insert({
+  if (!Meteor.users.find().count()) {
+    user1 = Meteor.users.insert({
       fullName: faker.name.findName(),
       email: faker.internet.email(),
       secondaryEmail: faker.internet.email(),
       phone: faker.phone.phoneNumber(),
     });
 
-    user2 = Users.insert({
+    user2 = Meteor.users.insert({
       fullName: faker.name.findName(),
       email: faker.internet.email(),
       secondaryEmail: faker.internet.email(),
       phone: faker.phone.phoneNumber(),
     });
 
-    user3 = Users.insert({
+    user3 = Meteor.users.insert({
       fullName: faker.name.findName(),
       email: faker.internet.email(),
       secondaryEmail: faker.internet.email(),
       phone: faker.phone.phoneNumber(),
     });
 
-    user4 = Users.insert({
+    user4 = Meteor.users.insert({
       fullName: faker.name.findName(),
       email: faker.internet.email(),
       secondaryEmail: faker.internet.email(),
       phone: faker.phone.phoneNumber(),
     });
 
-    user5 = Users.insert({
+    user5 = Meteor.users.insert({
       fullName: faker.name.findName(),
       email: faker.internet.email(),
       secondaryEmail: faker.internet.email(),
       phone: faker.phone.phoneNumber(),
     });
 
-    user6 = Users.insert({
+    user6 = Meteor.users.insert({
       fullName: faker.name.findName(),
       email: faker.internet.email(),
       secondaryEmail: faker.internet.email(),
@@ -149,11 +149,11 @@ Meteor.startup(function(){
       });
     };
   }
-  var auser2 = Users.findOne({ _id: user2 })
-  var auser3 = Users.findOne({ _id: user3 })
-  var auser4 = Users.findOne({ _id: user4 })
-  var auser5 = Users.findOne({ _id: user5 })
-  var auser6 = Users.findOne({ _id: user6 })
+  var auser2 = Meteor.users.findOne({ _id: user2 })
+  var auser3 = Meteor.users.findOne({ _id: user3 })
+  var auser4 = Meteor.users.findOne({ _id: user4 })
+  var auser5 = Meteor.users.findOne({ _id: user5 })
+  var auser6 = Meteor.users.findOne({ _id: user6 })
 
   //Events.update({_id: events[0]}, {$push: {guests: {$each: [{
     //name: auser2.fullName,
@@ -219,8 +219,8 @@ Meteor.startup(function(){
     //guest: user5,
   //}]}}})
 
-  //Users.update({ _id: user2 }, { $push: { events: { $each: [events[0]] } } })
-  //Users.update({ _id: user3 }, { $push: { events: { $each: [events[0]] } } })
-  //Users.update({ _id: user4 }, { $push: { events: { $each: [events[0], events[1]] } } })
-  //Users.update({ _id: user5 }, { $push: { events: { $each: [events[0], events[1]] } } })
+  //Meteor.users.update({ _id: user2 }, { $push: { events: { $each: [events[0]] } } })
+  //Meteor.users.update({ _id: user3 }, { $push: { events: { $each: [events[0]] } } })
+  //Meteor.users.update({ _id: user4 }, { $push: { events: { $each: [events[0], events[1]] } } })
+  //Meteor.users.update({ _id: user5 }, { $push: { events: { $each: [events[0], events[1]] } } })
 });

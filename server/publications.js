@@ -1,5 +1,5 @@
 Meteor.publish('users', function(){
-  return Users.find();
+  return Meteor.users.find();
 });
 
 Meteor.publish('events', function(){

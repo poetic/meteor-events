@@ -4,10 +4,9 @@ Template.EventsShowWall.helpers({
   },
 
   username: function(){
-    var userId = this.user;
-
-    if (Users.findOne(userId)) {
-      return Users.findOne(userId).fullName;
+    var user = Meteor.user();
+    if (user) {
+      return user.profile.fullName;
     }
   }
 });

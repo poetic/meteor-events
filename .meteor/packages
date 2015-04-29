@@ -18,3 +18,5 @@ momentjs:moment
 velocityjs:velocityjs
 dburles:google-maps
 reactive-dict
+accounts-ui
+accounts-password
