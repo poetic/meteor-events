@@ -62,7 +62,7 @@ Template.EventsShow.events({
 function setEventsShowHeight (){
   var windowHeight = $(window).height();
   var occupied = (
-    $('#status-bar').height() + $('.cover-photo-inner').height() + ($('.navbar').height() + 1)
+    $('#status-bar').height() + $('.img-preview-inner').height() + ($('.navbar').height() + 1)
   );
   var availableHeight = windowHeight - occupied;
 

@@ -1,0 +1,29 @@
+.img-preview {
+  color: white;
+}
+
+.img-preview-inner {
+  width: 100%;
+  height: 100px;
+  position: relative;
+
+  .img-preview-top-center {
+    padding: 0 10px 0 10px;
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -24px;
+  }
+
+  .img-preview-top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+  }
+
+  .img-preview-title {
+    position: absolute;
+    margin: 10px;
+    bottom: 0;
+  }
+}
