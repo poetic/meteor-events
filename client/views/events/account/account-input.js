@@ -1,0 +1,3 @@
+Template.AccountInput.helpers({
+
+});

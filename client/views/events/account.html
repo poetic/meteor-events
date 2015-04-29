@@ -8,30 +8,10 @@
 
   <ul>
     <li class="title padded">YOUR DETAILS</li>
-    <li>
-      <div class="input-field">
-        <input id="full_name" name="fullName" type="text" class="validate">
-        <label for="full_name">FULL NAME</label>
-      </div>
-    </li>
-    <li>
-      <div class="input-field">
-        <input id="primary_email" name="primaryEmail" type="text" class="validate">
-        <label for="primary_email">PRIMARY EMAIL</label>
-      </div>
-    </li>
-    <li>
-      <div class="input-field">
-        <input id="secondary_email" name="secondaryEmail" type="text" class="validate">
-        <label for="secondary_email">EMAIL 2</label>
-      </div>
-    </li>
-    <li>
-      <div class="input-field">
-        <input id="phone" name="phone" type="text" class="validate">
-        <label for="phone">PHONE</label>
-      </div>
-    </li>
+    {{> AccountInput value=profile.fullName name="fullName" label="FULL NAME"}}
+    {{> AccountInput value=profile.email name="email" label="EMAIL"}}
+    {{> AccountInput value=profile.secondaryEmail name="secondaryEmail" label="SECONDARY EMAIL"}}
+    {{> AccountInput value=profile.phone name="phone" label="PHONE"}}
   </ul>
 
   <div class='padded'>
