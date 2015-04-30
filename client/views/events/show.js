@@ -24,7 +24,7 @@ Template.EventsShow.helpers({
 });
 
 Template.EventsShow.events({
-  'submit .new-comment': function(event){
+  'submit #new-post': function(event){
     stopEvent(event);
 
     var routeParams = Router.current().params;
@@ -69,7 +69,7 @@ function setCommentFieldPosition (){
   var windowWidth = $(window).width();
   var leftOffset = windowWidth * 2;
 
-  this.$('.new-comment').css({ left: leftOffset });
+  this.$('.form-bottom').css({ left: leftOffset });
 };
 
 function scrollToBottom (){

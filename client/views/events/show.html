@@ -31,8 +31,12 @@
         {{> EventsShowWall}}
         {{> EventsShowGuestList}}
 
-        <form class='new-comment'>
-          <input type='text' name='comment' placeholder='Message...'>
+        <form id='new-post' class='form-bottom'>
+          <input
+            class='form-bottom-input'
+            type='text'
+            name='comment'
+            placeholder='Message...'>
         </form>
       {{/swiperSlides}}
 
@@ -57,7 +61,7 @@
         {{> EventsShowPhotos}}
         {{> EventsShowRsvp}}
 
-        <form class='form-bottom'>
+        <form id='new-post' class='form-bottom'>
           <input
             class='form-bottom-input'
             type='text'
