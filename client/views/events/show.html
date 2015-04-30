@@ -1,8 +1,11 @@
 <template name='EventsShow'>
   <div class='img-preview' style='background-image: url("{{currentEvent.coverPhoto}}")'>
     <div class='img-preview-inner'>
-      <i class='img-preview-top-center mdi-hardware-keyboard-arrow-up small'></i>
-      <a class='img-preview-top-right btn-floating btn-medium white'>
+      <i id='back-arrow'
+         class='img-preview-top-center mdi-hardware-keyboard-arrow-up small'>
+      </i>
+      <a id='edit-button'
+         class='img-preview-top-right btn-floating btn-medium white'>
         <i class='mdi-editor-mode-edit black-text'></i>
       </a>
       <h2 class='img-preview-title'>{{currentEvent.title}}</h2>
@@ -54,8 +57,12 @@
         {{> EventsShowPhotos}}
         {{> EventsShowRsvp}}
 
-        <form class='new-comment'>
-          <input type='text' name='comment' placeholder='Message...'>
+        <form class='form-bottom'>
+          <input
+            class='form-bottom-input'
+            type='text'
+            name='comment'
+            placeholder='Message...'>
         </form>
       {{/swiperSlides}}
     {{/if}}

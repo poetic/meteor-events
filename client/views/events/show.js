@@ -42,7 +42,7 @@ Template.EventsShow.events({
     event.target.comment.value = '';
   },
 
-  'click .cover-photo-icon': function(){
+  'click #back-arrow': function(){
     stopEvent(event);
     var userId = Router.current().params.user_id;
 
@@ -51,11 +51,7 @@ Template.EventsShow.events({
 
   'click #edit-button': function(event){
     stopEvent(event);
-    var routeParams = Router.current().params;
-
-    //Router.go('events.edit', {
-      //user_id: routeParams.user_id, event_id: routeParams.event_id
-    //});
+    console.log('click')
   },
 });
 
