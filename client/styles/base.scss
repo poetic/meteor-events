@@ -28,12 +28,12 @@ h5 {
 }
 
 button {
-  width: 100%;
-  border: 1px solid $gray;
-  box-sizing: border-box;
-  border-radius: 5px solid $black;
-  font-weight: bold;
-  text-transform: uppercase;
+  padding: 0 0 0 3px;
+
+  i {
+    font-size: 2.5rem;
+    vertical-align: middle;
+  }
 }
 
 i {
