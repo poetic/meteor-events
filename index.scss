@@ -5,15 +5,16 @@
 
 @import "client/styles/lib/variables.scss";
 
-@import "client/styles/components/ea-guest-list.scss";
 @import "client/styles/components/fixed-buttons.scss";
 @import "client/styles/components/main-slides.scss";
 @import "client/styles/components/wall-posts.scss";
+
 @import "client/styles/base.scss";
 @import "client/styles/layout.scss";
-
 @import "client/styles/modules/list-items.scss";
-
 @import "client/styles/modules/img-preview.scss";
 
 @import "client/styles/components/account.scss";
+@import "client/styles/modules/guest-list.scss";
+
+@import "client/styles/modules/ea-button.scss";

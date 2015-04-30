@@ -1,0 +1,41 @@
+.guest-list-header {
+  padding: 20px 10px 10px 10px;
+
+  .guest-list-header-title {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.guest-list {
+  margin: 0;
+
+  .guest-list-header {
+    position: relative;
+    padding: 5px 0 5px 10px;
+    background: $lightgray;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .guest-list-heading {
+    margin: 0;
+  }
+
+  .guest-list-heading-right {
+    position: absolute;
+    right: 11px;
+  }
+}
+
+.guest-list-preview-container {
+  padding: 20px 10px 10px 10px;
+
+  .guest-list-invite-link {
+    margin: 0 0 20px 0;
+    text-align: center;
+    text-decoration: underline;
+  }
+}

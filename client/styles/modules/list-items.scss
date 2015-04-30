@@ -154,5 +154,27 @@
 }
 
 .li-tiny {
+  position: relative;
+  padding-left: 10px;
+  border-bottom: 1px solid $lightgray;
 
+  .li-tiny-text {
+    position: relative;
+    margin: 10px 0 10px 0;
+  }
+
+  .li-tiny-right {
+    position: absolute;
+    color: $lightgray;
+  }
+
+  .right-text {
+    right: 12px;
+    text-transform: capitalize;
+  }
+
+  .right-icon {
+    right: 5px;
+    top: -9px;
+  }
 }

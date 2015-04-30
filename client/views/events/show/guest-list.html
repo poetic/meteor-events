@@ -1,54 +1,91 @@
 <template name='EventsShowGuestList'>
   <div class='swiper-slide'>
-    <div class='ea-guest-list-header'>
-      <h5>{{yesGuests.length}} Guests Attending</h5>
-      <button>Add Guests</button>
+    <div class='guest-list-header'>
+      <h2 class='guest-list-header-title'>{{yesGuests.length}} Guests Attending</h2>
+      <button class='btn-large ea-btn'>
+        Add Guests <i class='mdi-social-group'></i>
+      </button>
     </div>
 
-    <ul class='ea-guest-list'>
-      <li class='guest-list-heading'>
-        Not Yet Invited <span>{{notYetInvitedGuests.length}}</span>
+    <ul class='guest-list'>
+      <li class='guest-list-header'>
+        <h5 class='guest-list-heading'>
+          Not Yet Invited
+          <span class='guest-list-heading-right'>
+            {{notYetInvitedGuests.length}}
+          </span>
+        </h5>
       </li>
 
       {{#each notYetInvitedGuests}}
-        <li class='guest-name'>
-          <p>{{email}}</p> <i class='mdi-hardware-keyboard-arrow-right'></i>
+        <li class='li-tiny'>
+          <p class='li-tiny-text'>
+            {{email}}
+            <i class='li-tiny-right right-icon mdi-hardware-keyboard-arrow-right'></i>
+          </p>
         </li>
       {{/each}}
 
-      <p class='preview-invite'>Send myself a preview invite</p>
+      <div class='guest-list-preview-container'>
+        <p class='guest-list-invite-link'>Send myself a preview invite</p>
 
-      <div class='button-container'>
-        <button>Send Invites to {{uninvitedCount}} guests</button>
+        <button class='btn-large ea-btn'>
+          Send Invites to {{uninvitedCount}} guests
+          <i class='mdi-content-send'></i>
+        </button>
       </div>
     </ul>
 
-    <ul class='ea-guest-list'>
-      <li class='guest-list-heading yes'>Yes <span>{{yesGuests.length}}</span></li>
+    <ul class='guest-list'>
+      <li class='guest-list-header yes'>
+        <h5 class='guest-list-heading'>
+          Yes
+          <span class='guest-list-heading-right'>{{yesGuests.length}}</span>
+        </h5>
+      </li>
 
       {{#each yesGuests}}
-        <li class='guest-name'>
-          <p>{{email}}</p> <i class='mdi-hardware-keyboard-arrow-right'></i>
+        <li class='li-tiny'>
+          <p class='li-tiny-text'>
+            {{email}}
+            <i class='li-tiny-right right-icon mdi-hardware-keyboard-arrow-right'></i>
+          </p>
         </li>
       {{/each}}
     </ul>
 
-    <ul class='ea-guest-list'>
-      <li class='guest-list-heading no'>No <span>{{noGuests.length}}</span></li>
+    <ul class='guest-list'>
+      <li class='guest-list-header no'>
+        <h5 class='guest-list-heading'>
+          No
+          <span class='guest-list-heading-right'>{{noGuests.length}}</span>
+        </h5>
+      </li>
 
       {{#each noGuests}}
-        <li class='guest-name'>
-          <p>{{email}}</p> <i class='mdi-hardware-keyboard-arrow-right'></i>
+        <li class='li-tiny'>
+          <p class='li-tiny-text'>
+            {{email}}
+            <i class='li-tiny-right right-icon mdi-hardware-keyboard-arrow-right'></i>
+          </p>
         </li>
       {{/each}}
     </ul>
 
-    <ul class='ea-guest-list'>
-      <li class='guest-list-heading'>No Reply <span>{{noReplyGuests.length}}</span></li>
+    <ul class='guest-list'>
+      <li class='guest-list-header'>
+        <h5 class='guest-list-heading'>
+          No Reply
+          <span class='guest-list-heading-right'>{{noReplyGuests.length}}</span>
+        </h5>
+      </li>
 
       {{#each noReplyGuests}}
-        <li class='guest-name'>
-          <p>{{email}}</p> <p class='guest-mail-status'>{{mailStatus}}</p>
+        <li class='li-tiny'>
+          <p class='li-tiny-text'>
+            {{email}}
+            <span class='li-tiny-right right-text'>{{mailStatus}}</span>
+          </p>
         </li>
       {{/each}}
     </ul>
