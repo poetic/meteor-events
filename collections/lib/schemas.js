@@ -1,3 +1,5 @@
+Schemas = {};
+
 HostSchema = new SimpleSchema({
   name: {
     type: String

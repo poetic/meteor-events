@@ -4,6 +4,7 @@
 // When deleting a .scss or .sass file you must manually delete it from here
 
 @import "client/styles/lib/variables.scss";
+@import "client/styles/lib/mixins.scss";
 
 @import "client/styles/components/fixed-buttons.scss";
 @import "client/styles/components/main-slides.scss";
@@ -15,4 +16,9 @@
 @import "client/styles/modules/guest-list.scss";
 @import "client/styles/modules/ea-button.scss";
 @import "client/styles/modules/input-bottom.scss";
+
+@import "client/styles/utils.scss";
+@import "client/styles/modules/button.scss";
+
+@import "client/styles/components/fixed-buttons.scss";
 @import "client/styles/components/account.scss";

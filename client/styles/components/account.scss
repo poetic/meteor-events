@@ -1,5 +1,12 @@
 #account {
-  display:          none;
+  // TODO: revert this
+  display:          block;
+  top:              0;
+  // display:          none;
+  // top:              100%;
+
+  padding-top: $status-height;
+
   position:         absolute;
   background-color: white;
   z-index:          100;
@@ -13,19 +20,10 @@
   }
 
   .title {
-    font-weight: bold;
-    border-bottom: 1px solid #9e9e9e;
-    margin-bottom: 25px;
+    font-weight:    bold;
+    border-bottom:  1px solid #9e9e9e;
+    margin-bottom:  25px;
+    margin-top:     12px;
     padding-bottom: 10px;
-  }
-
-  .padded, li input {
-    padding-left:  10px;
-    padding-right: 10px;
-    box-sizing:    border-box;
-  }
-
-  .save {
-    width: 100%;
   }
 }

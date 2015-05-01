@@ -1,12 +1,14 @@
-var UserProfileSchema = new SimpleSchema({
+Schemas.UserProfileSchema = new SimpleSchema({
   fullName: {
     type: String
   },
   email: {
-    type: SimpleSchema.RegEx.Email
+    type: String,
+    regEx: SimpleSchema.RegEx.Email
   },
   secondaryEmail: {
-    type: SimpleSchema.RegEx.Email,
+    type: String,
+    regEx: SimpleSchema.RegEx.Email,
     optional: true
   },
   phone: {
@@ -45,7 +47,7 @@ Meteor.users.attachSchema(new SimpleSchema({
         optional: true
     },
     profile: {
-        type: UserProfileSchema,
+        type: Schemas.UserProfileSchema,
         optional: true
     },
     services: {

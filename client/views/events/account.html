@@ -1,23 +1,26 @@
 <template name="Account">
-<form id="account">
+<div id="account">
+
   <div class="header">
     <a class='close'> X </a>
     ACCOUNT
     <a class='logout'> Log Out </a>
   </div>
 
-  <ul>
-    <li class="title padded">YOUR DETAILS</li>
-    {{> AccountInput model=profile name="fullName"}}
-    {{> AccountInput model=profile name="email"}}
-    {{> AccountInput model=profile name="secondaryEmail"}}
-    {{> AccountInput model=profile name="phone"}}
-  </ul>
+  <div class="title horizontal-padded"> YOUR DETAILS </div>
 
-  <div class='padded'>
-    <button type="submit" class="save btn-large">
-      SAVE CHANGES
-    </button>
-  </div>
-</form>
+  {{#autoForm id="accountForm" collection="Meteor.users" type="update" doc=user}}
+    {{> afQuickField name='profile.fullName'}}
+    {{> afQuickField name='profile.email'}}
+    {{> afQuickField name='profile.secondaryEmail'}}
+    {{> afQuickField name='profile.phone'}}
+    <div class='horizontal-padded btn-bottom-wrapper'>
+      <button type="submit" class="btn-large btn-full">
+        SAVE CHANGES
+        <i class="mdi-action-done"></i>
+      </button>
+    </div>
+  {{/autoForm}}
+
+</div>
 </template>

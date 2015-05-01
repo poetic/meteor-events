@@ -5,8 +5,8 @@ Template.Account.onRendered(function(){
 });
 
 Template.Account.helpers({
-  profile: function() {
-    return Meteor.user().profile;
+  user: function() {
+    return Meteor.user();
   },
 });
 

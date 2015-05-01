@@ -1,7 +1,7 @@
 #status-bar {
   position: static;
   background: $black;
-  height: 23px;
+  height: $status-height;
   width: 100%;
   z-index: 9;
 }
