@@ -1,6 +1,6 @@
 Template.Account.onRendered(function(){
   if(Router.current().params['show-account']) {
-    this.$('form').css('display', 'block').css('top', 0);
+    $(this.firstNode).css('display', 'block').css('top', 0);
   }
 });
 
@@ -52,6 +52,9 @@ Template.Account.events({
     accountPage.css('display', 'none');
   }
 });
+<<<<<<< HEAD
 
 function closeAccount() {
 }
+=======
+>>>>>>> add modal component and create-event page

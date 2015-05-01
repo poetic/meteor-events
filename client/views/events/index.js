@@ -45,3 +45,15 @@ function setSlideHeight (){
  this.$('.swiper-slide-main').height(availableHeight);
 };
 
+Template.EventsIndex.events({
+  'click #fixed-settings': function() {
+    $('#account').css('display', 'block');
+    $('#account').velocity({top: 0}, "swing");
+    return false;
+  },
+  'click #fixed-add-event': function() {
+    $('#createEvent').css('display', 'block');
+    $('#createEvent').velocity({top: 0}, "swing");
+    return false;
+  },
+});

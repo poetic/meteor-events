@@ -1,0 +1,27 @@
+<template name="CreateEvent">
+<div id="createEvent" class="modal-full">
+
+  <div class="header">
+    <div class="header-left">
+      <i class="close mdi-navigation-close"></i>
+    </div>
+
+    <span class="header-middle">CREATE AN EVENT</span>
+  </div>
+
+  {{#autoForm id="eventForm" collection="Events" type="insert"}}
+    {{> afQuickField name='title'}}
+    {{> afQuickField name='description'}}
+    <!-- host name is a sting but the schema define it as an array -->
+    <!-- {{> afQuickField name='hosts'}} -->
+    {{> afQuickField name='isPlusOne'}}
+    <div class='horizontal-padded btn-bottom-wrapper'>
+      <button type="submit" class="btn-large btn-full">
+        ADD AN ACTIVITY
+        <i class="mdi-action-done"></i>
+      </button>
+    </div>
+  {{/autoForm}}
+
+</div>
+</template>
