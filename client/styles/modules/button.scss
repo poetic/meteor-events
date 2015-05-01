@@ -1,7 +1,11 @@
 .btn-bottom-wrapper {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   width: 100%;
+
+  .btn-full {
+    margin-bottom: 10px;
+  }
 }
 
 .btn-full {

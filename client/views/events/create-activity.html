@@ -1,0 +1,30 @@
+<template name="CreateActivity">
+<div id="createActivity" class="modal-full">
+
+  <div class="header">
+    <div class="header-left">
+      <i class="back mdi-hardware-keyboard-backspace"></i>
+    </div>
+
+    <span class="header-middle">CREATE AN ACTIVITY</span>
+  </div>
+
+  {{#autoForm id="eventForm" schema="ActivitySchema" type="insert"}}
+    <div>
+      {{> afQuickField name='title'}}
+      {{> afQuickField name='startTime'}}
+      {{> afQuickField name='endTime'}}
+      {{> afQuickField name='address'}}
+      {{> afQuickField name='attire'}}
+      {{> afQuickField name='transit'}}
+    </div>
+    <div class='horizontal-padded btn-bottom-wrapper'>
+      <button type="submit" class="btn-large btn-full">
+        DONE
+        <i class="mdi-action-done"></i>
+      </button>
+    </div>
+  {{/autoForm}}
+
+</div>
+</template>

@@ -46,14 +46,6 @@ function setSlideHeight (){
 };
 
 Template.EventsIndex.events({
-  'click #fixed-settings': function() {
-    $('#account').css('display', 'block');
-    $('#account').velocity({top: 0}, "swing");
-    return false;
-  },
-  'click #fixed-add-event': function() {
-    $('#createEvent').css('display', 'block');
-    $('#createEvent').velocity({top: 0}, "swing");
-    return false;
-  },
+  'click #fixed-settings': Modal.openModal.bind(null, '#account'),
+  'click #fixed-add-event': Modal.openModal.bind(null, '#createEvent'),
 });
