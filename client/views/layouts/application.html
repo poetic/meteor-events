@@ -8,7 +8,9 @@
 <template name='applicationLayout'>
   <header id='status-bar'></header>
 
-  {{> yield}}
+  <div id='content'>
+    {{> yield}}
+  </div>
 </template>
 
 <template name='notFoundLayout'>

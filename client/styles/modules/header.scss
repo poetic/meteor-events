@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  border-bottom: 1px $gray solid;
+
+  .header-left {
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+  }
+  .header-middle {
+    font-weight: bold;
+  }
+  .header-right {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+  }
+}

@@ -6,6 +6,10 @@
   z-index: 9;
 }
 
+#content {
+  position: relative;
+}
+
 .navbar {
   height: 55px;
   background-color: $black;
@@ -26,4 +30,9 @@
 
 .slide-container {
   margin: 0;
+}
+
+.header {
+  height: $header-height;
+  line-height: $header-height;
 }
