@@ -10,25 +10,11 @@ Template.swiperSlides.rendered = function(){
 
 function onTransitionEnd (event){
   var param = this.data.param;
-  var queryString = '?' + param + '=' + event.activeIndex;
+  var currentSlide = event.activeIndex.toString();
 
-  var newState = {};
-  newState[param] = event.activeIndex;
-
-  if (!history.state) {
-    history.replaceState(newState, '', queryString);
-  } else if (history.state[param] !== event.activeIndex) {
-    history.pushState(newState, '', queryString);
+  if (ParamManager.getParam(param) !== currentSlide) {
+    ParamManager.setParam(param, currentSlide);
   }
-};
-
-function addStateListener (){
-  var swiper = this.$('.swiper-container')[0].swiper;
-  var param = this.data.param;
-
-  window.onpopstate = function(event){
-    swiper.slideTo(event.state[param]);
-  };
 };
 
 function setInitialParamValue (){
@@ -36,9 +22,18 @@ function setInitialParamValue (){
   var initialSlide = this.data.options.initialSlide;
   var routeParams = Router.current().params.query;
 
-  ParamManager.RegisterParam(param, function(){});
+  if (!ParamManager.isRegistered(param)) {
+    ParamManager.RegisterParam(param, onParamChange.bind(this));
+  }
 
   if (routeParams[param] !== initialSlide) {
     ParamManager.setParam(param, initialSlide, true);
   }
-}
+};
+
+function onParamChange (index){
+  var swiper = this.$('.swiper-container')[0].swiper;
+
+  if (swiper) { swiper.slideTo(index) }
+};
+
