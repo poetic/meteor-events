@@ -49,7 +49,7 @@ Template.EventsShow.events({
     Router.go('events.index', { user_id: userId });
   },
 
-  'click #edit-button': function(event){
+  'click #edit-event': function(event){
     stopEvent(event);
     console.log('click')
   },

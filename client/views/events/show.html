@@ -4,7 +4,7 @@
       <i id='back-arrow'
          class='img-preview-top-center mdi-hardware-keyboard-arrow-up small'>
       </i>
-      <a id='edit-button'
+      <a id='edit-event'
          class='img-preview-top-right btn-floating btn-medium white'>
         <i class='mdi-editor-mode-edit black-text'></i>
       </a>
@@ -71,4 +71,7 @@
       {{/swiperSlides}}
     {{/if}}
   {{/if}}
+
+  {{> _eventsEdit currentEvent=currentEvent}}
+  {{> _eventsActivityEdit currentActivity=currentActivity}}
 </template>
