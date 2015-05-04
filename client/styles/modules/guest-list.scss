@@ -17,6 +17,14 @@
     background: $lightgray;
     color: $white;
     text-transform: uppercase;
+
+    &.yes {
+      border-bottom: 2px solid $green;
+    }
+
+    &.no {
+      border-bottom: 2px solid $red;
+    }
   }
 
   .guest-list-heading {
