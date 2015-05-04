@@ -62,7 +62,7 @@ function setEventsShowHeight (){
   );
   var availableHeight = windowHeight - occupied;
 
-  this.$('.main-slides').height(availableHeight);
+  this.$('.swiper-slide-main').height(availableHeight);
 };
 
 function setCommentFieldPosition (){
