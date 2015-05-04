@@ -34,9 +34,11 @@ EventsIndexController = ApplicationController.extend({
         slideToClickedSlide: true,
         touchRatio: 0.5,
         initialSlide: initialSlide || 1,
+        runCallbacksOnInit: false,
       },
       slideOptions: {
         initialSlide: initialSlide || 1,
+        runCallbacksOnInit: false,
       },
     };
   }

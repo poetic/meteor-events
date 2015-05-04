@@ -1,3 +1,6 @@
+ParamManager = Meteor.Poetic.ParamManager;
+Settings = Meteor.settings;
+
 stopEvent = function(event){
   event.preventDefault();
   event.stopPropagation();
@@ -17,10 +20,10 @@ encodeFullAddress = function(address){
 };
 
 buildMapUrl = function(encodedAddress, dimensions){
-  var url = Meteor.settings.public.googleApiUrl +
+  var url = Settings.public.googleApiUrl +
     '?markers=' + encodedAddress +
     '&size=' + dimensions.width + 'x' + dimensions.height +
-    '&key=' + Meteor.settings.public.googleApiKey;
+    '&key=' + Settings.public.googleApiKey;
 
   return url;
 };
