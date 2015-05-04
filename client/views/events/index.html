@@ -1,25 +1,28 @@
 <template name='EventsIndex'>
-  {{#swiperSlides
-    options=navOptions param='slides' classNames='navbar'
-  }}
-    <div class='swiper-slide'>RSVPs</div>
-    <div class='swiper-slide'>Upcoming</div>
-    <div class='swiper-slide'>Past Events</div>
-  {{/swiperSlides}}
+  {{#if Template.subscriptionsReady}}
+    {{#swiperSlides
+      options=navOptions param='slides' classNames='navbar'
+    }}
+      <div class='swiper-slide'>RSVPs</div>
+      <div class='swiper-slide'>Upcoming</div>
+      <div class='swiper-slide'>Past Events</div>
+    {{/swiperSlides}}
 
-  {{#swiperSlides
-    options=slideOptions param='slides' classNames='swiper-slide-main'
-  }}
-    {{> EventsRsvp}}
-    {{> _eventsList eventsList=upcomingEvents}}
-    {{> _eventsList eventsList=pastEvents}}
-  {{/swiperSlides}}
+    {{#swiperSlides
+      options=slideOptions param='slides' classNames='swiper-slide-main'
+    }}
+      {{> EventsRsvp}}
+      {{> _eventsList eventsList=upcomingEvents}}
+      {{> _eventsList eventsList=pastEvents}}
+    {{/swiperSlides}}
+  {{/if}}
 
   <a id='fixed-settings' class='btn-floating btn-large white'>
-    <i class='mdi-social-person black-text'></i>
+    <i id='acct-btn' class='mdi-social-person black-text'></i>
   </a>
   <a id='fixed-add-event' class='btn-floating btn-large white'>
     <i class='mdi-content-add black-text'></i>
   </a>
+
   {{> Account}}
 </template>

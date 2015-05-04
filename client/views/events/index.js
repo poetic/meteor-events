@@ -1,22 +1,17 @@
-Template.EventsIndex.rendered = function(){
-  setSlideHeight.call(this);
-
-  var swiper1 = this.$('.swiper-container')[0].swiper;
-  var swiper2 = this.$('.swiper-container')[1].swiper;
-
-  swiper1.params.control = swiper2;
-  swiper2.params.control = swiper1;
+Template.EventsIndex.created = function(){
+  this.subscribe('events');
 };
 
-function setSlideHeight (){
- var windowHeight    = $(window).height();
- var navHeight       = $('.navbar').height();
- var statusBarHeight = $('#status-bar').height();
+Template.EventsIndex.rendered = function(){
+  Meteor.setTimeout(function(){
+    setSlideHeight.call(this);
 
-   // take off 1 extra pixel to prevent outer template from scrolling
- var availableHeight = windowHeight - statusBarHeight - (navHeight + 1);
+    var swiper1 = this.$('.swiper-container')[0].swiper;
+    var swiper2 = this.$('.swiper-container')[1].swiper;
 
- this.$('.swiper-slide-main').height(availableHeight);
+    swiper1.params.control = swiper2;
+    swiper2.params.control = swiper1;
+  }.bind(this), 1000);
 };
 
 Template.EventsIndex.events({
@@ -29,7 +24,6 @@ Template.EventsIndex.events({
     accountPage.css('display', 'initial');
 
     ramjet.transform(accountBtn[0], accountPage[0], {
-      //easing: ramjet.easeInOut,
       duration: 250,
       done: function(){
         accountPage.css('display', 'initial');
@@ -39,4 +33,15 @@ Template.EventsIndex.events({
     accountPage.css('display', 'none');
   },
 });
+
+function setSlideHeight (){
+ var windowHeight    = $(window).height();
+ var navHeight       = $('.navbar').height();
+ var statusBarHeight = $('#status-bar').height();
+
+   // take off 1 extra pixel to prevent outer template from scrolling
+ var availableHeight = windowHeight - statusBarHeight - (navHeight + 1);
+
+ this.$('.swiper-slide-main').height(availableHeight);
+};
 

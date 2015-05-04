@@ -1,12 +1,3 @@
-Template.swiperSlides.created = function(){
-  var param = this.data.param;
-  var routeParams = Router.current().params.query;
-
-  if (_.has(routeParams, param)) {
-    this.data.options.initialSlide = routeParams[param];
-  }
-};
-
 Template.swiperSlides.rendered = function(){
   var options = this.data.options;
   var defaults = { onTransitionEnd: onTransitionEnd.bind(this) };

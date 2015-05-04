@@ -5,6 +5,12 @@ EventsIndexController = ApplicationController.extend({
 
   data: function(){
     var userId = this.params.user_id;
+    var routeParams = this.params.query;
+    var initialSlide;
+
+    if (_.has(routeParams, 'slides')) {
+      initialSlide = routeParams.slides;
+    }
 
     return {
       upcomingEvents: function(){
@@ -27,10 +33,10 @@ EventsIndexController = ApplicationController.extend({
         slidesPerView: 'auto',
         slideToClickedSlide: true,
         touchRatio: 0.5,
-        initialSlide: 1,
+        initialSlide: initialSlide || 1,
       },
       slideOptions: {
-        initialSlide: 1,
+        initialSlide: initialSlide || 1,
       },
     };
   }
