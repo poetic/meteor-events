@@ -7,8 +7,13 @@ EventsShowController = ApplicationController.extend({
   },
 
   data: function(){
-    var routeParams = Router.current().params;
-    var eventId = routeParams.event_id;
+    var eventId = this.params.event_id;
+    var routeParams = this.params.query;
+    var initialSlide;
+
+    if (_.has(routeParams, 'slides')) {
+      initialSlide = routeParams.slides;
+    }
 
     return {
       currentEvent: function(){
@@ -18,10 +23,10 @@ EventsShowController = ApplicationController.extend({
         centeredSlides: true,
         slidesPerView: 'auto',
         slideToClickedSlide: true,
-        initialSlide: 2,
+        initialSlide: initialSlide || 2,
       },
       plannerSlideOptions: {
-        initialSlide: 2,
+        initialSlide: initialSlide || 2,
         threshold: 10,
       },
     };
