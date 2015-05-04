@@ -1,11 +1,11 @@
 Template.swiperSlides.rendered = function(){
+  setInitialParamValue.call(this);
+
   var options = this.data.options;
   var defaults = { onTransitionEnd: onTransitionEnd.bind(this) };
   var swiperOptions = _.extend(options, defaults);
 
   this.$('.swiper-container').swiper(swiperOptions);
-
-  addStateListener.call(this);
 };
 
 function onTransitionEnd (event){
@@ -30,3 +30,15 @@ function addStateListener (){
     swiper.slideTo(event.state[param]);
   };
 };
+
+function setInitialParamValue (){
+  var param = this.data.param;
+  var initialSlide = this.data.options.initialSlide;
+  var routeParams = Router.current().params.query;
+
+  ParamManager.RegisterParam(param, function(){});
+
+  if (routeParams[param] !== initialSlide) {
+    ParamManager.setParam(param, initialSlide, true);
+  }
+}
