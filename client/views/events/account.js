@@ -12,20 +12,30 @@ Template.Account.helpers({
 
 Template.Account.events({
   'submit form': function(event) {
-    event.preventDefault();
+    stopEvent(event);
 
-    Meteor.users.update(Meteor.userId(), {
-      $set: {
-        'profile.fullName':       event.target.fullName.value,
-        'profile.email':          event.target.email.value,
-        'profile.secondaryEmail': event.target.secondaryEmail.value,
-        'profile.phone':          event.target.phone.value
-      }
+    var accountBtn = $('#acct-btn');
+    var accountPage = $('#account');
+
+    ramjet.transform(accountPage[0], accountBtn[0], {
+      //easing: ramjet.easeInOut,
+      duration: 250,
     });
 
-    closeAccount();
+    accountPage.css('display', 'none');
 
-    return false;
+    //Meteor.users.update(Meteor.userId(), {
+      //$set: {
+        //'profile.fullName':       event.target.fullName.value,
+        //'profile.email':          event.target.email.value,
+        //'profile.secondaryEmail': event.target.secondaryEmail.value,
+        //'profile.phone':          event.target.phone.value
+      //}
+    //});
+
+    //closeAccount();
+
+    //return false;
   },
 
   'click .close': function(event){
@@ -44,7 +54,4 @@ Template.Account.events({
 });
 
 function closeAccount() {
-  $('#account').velocity({top: '100%'}, "swing", function() {
-    $('#account').css('display', 'none');
-  });
 }
