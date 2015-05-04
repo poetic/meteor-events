@@ -8,6 +8,14 @@ Template.swiperSlides.rendered = function(){
   this.$('.swiper-container').swiper(swiperOptions);
 };
 
+Template.swiperSlides.destroyed = function(){
+  var param = this.data.param;
+
+  if (ParamManager.isRegistered(param)) {
+    ParamManager.DeRegisterParam(param);
+  }
+};
+
 function onTransitionEnd (event){
   var param = this.data.param;
   var currentSlide = event.activeIndex.toString();
