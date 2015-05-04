@@ -21,7 +21,17 @@ EventsIndexController = ApplicationController.extend({
       },
       rsvps: function(){
         return [];
-      }
+      },
+      navOptions: {
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        slideToClickedSlide: true,
+        touchRatio: 0.5,
+        initialSlide: 1,
+      },
+      slideOptions: {
+        initialSlide: 1,
+      },
     };
   }
 });

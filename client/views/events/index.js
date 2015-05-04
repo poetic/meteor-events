@@ -1,17 +1,3 @@
-Template.EventsIndex.created = function(){
-  this.data.navOptions = {
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    slideToClickedSlide: true,
-    touchRatio: 0.5,
-    initialSlide: 1,
-  };
-
-  this.data.slideOptions = {
-    initialSlide: 1,
-  };
-};
-
 Template.EventsIndex.rendered = function(){
   setSlideHeight.call(this);
 
