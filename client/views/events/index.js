@@ -15,7 +15,7 @@ Template.EventsIndex.rendered = function(){
 };
 
 Template.EventsIndex.events({
-  'click #fixed-settings': function(event) {
+  'click #acct-btn-wrapper': function(event) {
     stopEvent(event);
 
     var accountBtn = $('#acct-btn');
@@ -46,6 +46,5 @@ function setSlideHeight (){
 };
 
 Template.EventsIndex.events({
-  'click #fixed-settings': Modal.openModal.bind(null, '#account'),
-  'click #fixed-add-event': Modal.openModal.bind(null, '#createEvent'),
+  'click #add-event-btn-wrapper': Modal.openModal.bind(null, '#createEvent'),
 });

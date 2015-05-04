@@ -41,7 +41,7 @@ Template.Account.events({
   'click .close': function(event){
     stopEvent(event);
 
-    var accountBtn = $('#fixed-settings');
+    var accountBtn = $('#acct-btn-wrapper');
     var accountPage = $('#account');
 
     ramjet.transform(accountPage[0], accountBtn[0], {
@@ -52,9 +52,6 @@ Template.Account.events({
     accountPage.css('display', 'none');
   }
 });
-<<<<<<< HEAD
 
 function closeAccount() {
 }
-=======
->>>>>>> add modal component and create-event page
