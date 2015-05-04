@@ -16,7 +16,7 @@ function setSlideHeight (){
    // take off 1 extra pixel to prevent outer template from scrolling
  var availableHeight = windowHeight - statusBarHeight - (navHeight + 1);
 
- this.$('.main-slides').height(availableHeight);
+ this.$('.swiper-slide-main').height(availableHeight);
 };
 
 Template.EventsIndex.events({

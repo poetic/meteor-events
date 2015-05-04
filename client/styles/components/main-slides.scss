@@ -1,6 +1,10 @@
-.main-slides {
+.swiper-slide-main {
   .swiper-slide {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+
+    .swiper-slide-scrollable {
+      height: 100.1%;
+    }
   }
 }
