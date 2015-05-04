@@ -27,7 +27,20 @@ Template.Account.events({
 
     return false;
   },
-  'click .close': closeAccount,
+
+  'click .close': function(event){
+    stopEvent(event);
+
+    var accountBtn = $('#fixed-settings');
+    var accountPage = $('#account');
+
+    ramjet.transform(accountPage[0], accountBtn[0], {
+      //easing: ramjet.easeInOut,
+      duration: 250,
+    });
+
+    accountPage.css('display', 'none');
+  }
 });
 
 function closeAccount() {

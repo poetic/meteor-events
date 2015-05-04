@@ -20,9 +20,23 @@ function setSlideHeight (){
 };
 
 Template.EventsIndex.events({
-  'click #fixed-settings': function() {
-    $('#account').css('display', 'block');
-    $('#account').velocity({top: 0}, "swing");
-    return false;
+  'click #fixed-settings': function(event) {
+    stopEvent(event);
+
+    var accountBtn = $('#acct-btn');
+    var accountPage = $('#account');
+
+    accountPage.css('display', 'initial');
+
+    ramjet.transform(accountBtn[0], accountPage[0], {
+      //easing: ramjet.easeInOut,
+      duration: 250,
+      done: function(){
+        accountPage.css('display', 'initial');
+      },
+    });
+
+    accountPage.css('display', 'none');
   },
 });
+
