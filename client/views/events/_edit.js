@@ -10,8 +10,6 @@ Template._eventsEdit.events({
     stopEvent(event);
 
     // TODO: save event
-
-    return false;
   },
 
   'click #add-an-activity': Modal.openModal.bind(null, '#createActivity'),
@@ -20,8 +18,8 @@ Template._eventsEdit.events({
     stopEvent(event);
 
     transformClose({
-      from: $('#create-event'),
-      to: $('#add-event-btn')
+      from: $('#events-edit'),
+      to: $('#event-edit-btn')
     });
   }
 });

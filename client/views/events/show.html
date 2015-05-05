@@ -2,11 +2,11 @@
   <div class='img-preview' style='background-image: url("{{currentEvent.coverPhoto}}")'>
     <div class='img-preview-inner'>
       <i id='back-arrow'
-         class='img-preview-top-center mdi-hardware-keyboard-arrow-up small'>
+        class='img-preview-top-center mdi-hardware-keyboard-arrow-up small'>
       </i>
-      <a id='edit-event'
-         class='img-preview-top-right btn-floating btn-medium white'>
-        <i class='mdi-editor-mode-edit black-text'></i>
+      <a id='edit-event-btn-wrapper'
+        class='img-preview-top-right btn-floating btn-medium white'>
+        <i id='event-edit-btn' class='mdi-editor-mode-edit black-text'></i>
       </a>
       <h2 class='img-preview-title'>{{currentEvent.title}}</h2>
     </div>

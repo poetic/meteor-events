@@ -28,8 +28,8 @@ Template.EventsIndex.events({
     stopEvent(event);
 
     transformOpen({
-      from: $('#add-event-btn'),
-      to: $('#create-event')
+      from: $('#event-edit-btn'),
+      to: $('#events-edit')
     });
   },
 });

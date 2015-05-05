@@ -49,9 +49,13 @@ Template.EventsShow.events({
     Router.go('events.index', { user_id: userId });
   },
 
-  'click #edit-event': function(event){
+  'click #edit-event-btn-wrapper': function(event){
     stopEvent(event);
-    console.log('click')
+
+    transformOpen({
+      from: $('#event-edit-btn'),
+      to: $('#events-edit')
+    });
   },
 });
 
