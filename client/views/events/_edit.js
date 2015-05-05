@@ -1,8 +1,7 @@
 Template._eventsEdit.onRendered(function(){
-  if(Router.current().params['create-event']) {
-    $(this.firstNode).css('display', 'block').css('top', 0);
+  if (Router.current().params.query['edit-form']) {
+    $('#events-edit').show()
   }
-  // TODO: use js to set the height of the inputs
 });
 
 Template._eventsEdit.events({
