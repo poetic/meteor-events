@@ -1,4 +1,35 @@
 <template name='_eventsEdit'>
-  <div>
+  <div id="create-event" class="modal-full">
+
+    <div class="header">
+      <div class="header-left">
+        <i class="close mdi-navigation-close"></i>
+      </div>
+
+      <span class="header-middle">CREATE AN EVENT</span>
+    </div>
+
+    {{#autoForm id="eventForm" collection="Events" type="insert"}}
+      <div>
+        {{> afQuickField name='title'}}
+        {{> afQuickField name='description'}}
+        <!-- host name is a sting but the schema define it as an array -->
+        <!-- {{> afQuickField name='hosts'}} -->
+        {{> afQuickField name='isPlusOne'}}
+      </div>
+      <div class='horizontal-padded btn-bottom-wrapper'>
+        <button id="add-an-activity" type="button" class="btn-large btn-full">
+          ADD AN ACTIVITY
+          <i class="mdi-content-add"></i>
+        </button>
+
+        {{#if activities}}
+          <button type="submit" class="btn-large btn-full">
+            CREATE MY EVENT
+            <i class="mdi-action-done"></i>
+          </button>
+        {{/if}}
+      </div>
+    {{/autoForm}}
   </div>
 </template>

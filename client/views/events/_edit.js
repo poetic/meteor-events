@@ -1,14 +1,11 @@
-Template.CreateEvent.onRendered(function(){
+Template._eventsEdit.onRendered(function(){
   if(Router.current().params['create-event']) {
     $(this.firstNode).css('display', 'block').css('top', 0);
   }
   // TODO: use js to set the height of the inputs
 });
 
-Template.CreateEvent.helpers({
-});
-
-Template.CreateEvent.events({
+Template._eventsEdit.events({
   'submit form': function(event) {
     stopEvent(event);
 
@@ -16,6 +13,7 @@ Template.CreateEvent.events({
 
     return false;
   },
+
   'click #add-an-activity': Modal.openModal.bind(null, '#createActivity'),
 
   'click .close': function(event){
