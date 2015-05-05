@@ -12,6 +12,12 @@ Template.EventsIndex.rendered = function(){
     swiper1.params.control = swiper2;
     swiper2.params.control = swiper1;
   }.bind(this), 1000);
+
+  registerEditFormParam();
+};
+
+Template.EventsIndex.destroyed = function(){
+  deregisterParam('edit-form');
 };
 
 Template.EventsIndex.events({
@@ -27,10 +33,7 @@ Template.EventsIndex.events({
   'click #add-event-btn-wrapper': function(event){
     stopEvent(event);
 
-    transformOpen({
-      from: $('#event-edit-btn'),
-      to: $('#events-edit')
-    });
+    ParamManager.setParam('edit-form', true);
   },
 });
 

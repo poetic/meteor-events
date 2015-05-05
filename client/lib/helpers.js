@@ -48,3 +48,28 @@ transformClose = function(els){
 
   els.from.css('display', 'none');
 };
+
+deregisterParam = function(param){
+  if (ParamManager.isRegistered(param)) {
+    ParamManager.DeRegisterParam(param);
+  }
+};
+
+registerEditFormParam = function(){
+  if (!ParamManager.isRegistered('edit-form')) {
+    ParamManager.RegisterParam('edit-form', function(value){
+
+      if (value) {
+        transformOpen({
+          from: $('#event-edit-btn'), to: $('#events-edit')
+        });
+      } else {
+        if ($('#events-edit').css('display') !== 'none') {
+          transformClose({
+            from: $('#events-edit'), to: $('#event-edit-btn')
+          });
+        }
+      }
+    });
+  }
+};

@@ -18,9 +18,7 @@ Template.EventsShow.rendered = function(){
 };
 
 Template.EventsShow.destroyed = function(){
-  if (ParamManager.isRegistered('edit-form')) {
-    ParamManager.DeRegisterParam('edit-form');
-  }
+  deregisterParam('edit-form');
 };
 
 Template.EventsShow.helpers({
@@ -87,21 +85,4 @@ function scrollToBottom (){
   newPost.velocity('scroll', { container: $('.wall-slide') });
 };
 
-function registerEditFormParam (){
-  if (!ParamManager.isRegistered('edit-form')) {
-    ParamManager.RegisterParam('edit-form', function(value){
 
-      if (value) {
-        transformOpen({
-          from: $('#event-edit-btn'), to: $('#events-edit')
-        });
-      } else {
-        if ($('#events-edit').css('display') !== 'none') {
-          transformClose({
-            from: $('#events-edit'), to: $('#event-edit-btn')
-          });
-        }
-      }
-    });
-  }
-};
