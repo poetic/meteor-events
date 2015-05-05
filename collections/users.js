@@ -2,10 +2,11 @@ Schemas.UserProfileSchema = new SimpleSchema({
   fullName: {
     type: String
   },
-  email: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Email
-  },
+  //email: {
+    //type: String,
+    //regEx: SimpleSchema.RegEx.Email
+  //},
+
   secondaryEmail: {
     type: String,
     regEx: SimpleSchema.RegEx.Email,
