@@ -13,6 +13,14 @@ Template.EventsShow.rendered = function(){
     swiper1.params.control = swiper2;
     swiper2.params.control = swiper1;
   }.bind(this), 1000);
+
+  registerEditFormParam();
+};
+
+Template.EventsShow.destroyed = function(){
+  if (ParamManager.isRegistered('edit-form')) {
+    ParamManager.DeRegisterParam('edit-form');
+  }
 };
 
 Template.EventsShow.helpers({
@@ -52,18 +60,7 @@ Template.EventsShow.events({
   'click #edit-event-btn-wrapper': function(event){
     stopEvent(event);
 
-    if (!ParamManager.isRegistered('edit-form')) {
-      ParamManager.RegisterParam('edit-form', function(value){
-        console.log('callback', value)
-      });
-    }
-
     ParamManager.setParam('edit-form', true);
-
-    transformOpen({
-      from: $('#event-edit-btn'),
-      to: $('#events-edit')
-    });
   },
 });
 
@@ -88,4 +85,23 @@ function scrollToBottom (){
   var newPost = $('.wall-slide li').last();
 
   newPost.velocity('scroll', { container: $('.wall-slide') });
+};
+
+function registerEditFormParam (){
+  if (!ParamManager.isRegistered('edit-form')) {
+    ParamManager.RegisterParam('edit-form', function(value){
+
+      if (value) {
+        transformOpen({
+          from: $('#event-edit-btn'), to: $('#events-edit')
+        });
+      } else {
+        if ($('#events-edit').css('display') !== 'none') {
+          transformClose({
+            from: $('#events-edit'), to: $('#event-edit-btn')
+          });
+        }
+      }
+    });
+  }
 };

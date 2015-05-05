@@ -1,9 +1,3 @@
-Template._eventsEdit.onRendered(function(){
-  if (Router.current().params.query['edit-form']) {
-    $('#events-edit').show()
-  }
-});
-
 Template._eventsEdit.events({
   'submit form': function(event) {
     stopEvent(event);
@@ -15,11 +9,6 @@ Template._eventsEdit.events({
 
   'click .close': function(event){
     stopEvent(event);
-
-    transformClose({
-      from: $('#events-edit'),
-      to: $('#event-edit-btn')
-    });
 
     ParamManager.setParam('edit-form', null);
   }
