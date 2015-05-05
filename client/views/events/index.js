@@ -18,19 +18,19 @@ Template.EventsIndex.events({
   'click #acct-btn-wrapper': function(event) {
     stopEvent(event);
 
-    var accountBtn = $('#acct-btn');
-    var accountPage = $('#account');
-
-    accountPage.css('display', 'initial');
-
-    ramjet.transform(accountBtn[0], accountPage[0], {
-      duration: 250,
-      done: function(){
-        accountPage.css('display', 'initial');
-      },
+    transformOpen({
+      from: $('#acct-btn'),
+      to: $('#account')
     });
+  },
 
-    accountPage.css('display', 'none');
+  'click #add-event-btn-wrapper': function(event){
+    stopEvent(event);
+
+    transformOpen({
+      from: $('#add-event-btn'),
+      to: $('#create-event')
+    });
   },
 });
 
@@ -44,7 +44,3 @@ function setSlideHeight (){
 
  this.$('.swiper-slide-main').height(availableHeight);
 };
-
-Template.EventsIndex.events({
-  'click #add-event-btn-wrapper': Modal.openModal.bind(null, '#createEvent'),
-});

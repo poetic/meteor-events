@@ -41,17 +41,9 @@ Template.Account.events({
   'click .close': function(event){
     stopEvent(event);
 
-    var accountBtn = $('#acct-btn-wrapper');
-    var accountPage = $('#account');
-
-    ramjet.transform(accountPage[0], accountBtn[0], {
-      //easing: ramjet.easeInOut,
-      duration: 250,
+    transformClose({
+      from: $('#account'),
+      to: $('#acct-btn')
     });
-
-    accountPage.css('display', 'none');
   }
 });
-
-function closeAccount() {
-}

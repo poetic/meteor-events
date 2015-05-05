@@ -27,3 +27,24 @@ buildMapUrl = function(encodedAddress, dimensions){
 
   return url;
 };
+
+transformOpen = function(els){
+  els.to.css('display', 'initial');
+
+  ramjet.transform(els.from[0], els.to[0], {
+    duration: 250,
+    done: function(){
+      els.to.css('display', 'initial')
+    },
+  });
+
+  els.to.css('display', 'none');
+};
+
+transformClose = function(els){
+  ramjet.transform(els.from[0], els.to[0], {
+    duration: 250
+  });
+
+  els.from.css('display', 'none');
+};

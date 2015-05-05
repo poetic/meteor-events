@@ -10,13 +10,21 @@ Template.CreateEvent.helpers({
 
 Template.CreateEvent.events({
   'submit form': function(event) {
-    event.preventDefault();
+    stopEvent(event);
 
     // TODO: save event
 
     return false;
   },
   'click #add-an-activity': Modal.openModal.bind(null, '#createActivity'),
-  'click .close': Modal.closeModal,
+
+  'click .close': function(event){
+    stopEvent(event);
+
+    transformClose({
+      from: $('#create-event'),
+      to: $('#add-event-btn')
+    });
+  }
 });
 
