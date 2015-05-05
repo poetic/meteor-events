@@ -20,6 +20,8 @@ Template._eventsEdit.events({
       from: $('#events-edit'),
       to: $('#event-edit-btn')
     });
+
+    ParamManager.setParam('edit-form', null);
   }
 });
 

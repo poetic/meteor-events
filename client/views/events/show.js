@@ -52,6 +52,14 @@ Template.EventsShow.events({
   'click #edit-event-btn-wrapper': function(event){
     stopEvent(event);
 
+    if (!ParamManager.isRegistered('edit-form')) {
+      ParamManager.RegisterParam('edit-form', function(value){
+        console.log('callback', value)
+      });
+    }
+
+    ParamManager.setParam('edit-form', true);
+
     transformOpen({
       from: $('#event-edit-btn'),
       to: $('#events-edit')
