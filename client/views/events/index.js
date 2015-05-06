@@ -40,10 +40,9 @@ Template.EventsIndex.events({
 function setSlideHeight (){
  var windowHeight    = $(window).height();
  var navHeight       = $('.navbar').height();
- var statusBarHeight = $('#status-bar').height();
 
    // take off 1 extra pixel to prevent outer template from scrolling
- var availableHeight = windowHeight - statusBarHeight - (navHeight + 1);
+ var availableHeight = windowHeight - (navHeight + 1);
 
  this.$('.swiper-slide-main').height(availableHeight);
 };
